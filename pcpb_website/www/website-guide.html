@@ -1,0 +1,13 @@
+{% extends "templates/pcpb_page.html" %}
+{% block page_content %}
+<section class="pc-pagehead"><div class="pc-wrap"><h1>{{ title }}</h1><p class="pc-lead">How the PCPB website is set up, administered and published.</p></div></section>
+<section class="pc-sec"><div class="pc-wrap pc-pad">
+  <div class="pc-btn-row" style="margin:0 0 20px"><a class="pc-btn primary" href="/page-builder">Website builder</a><a class="pc-btn" href="/page-builder?guide=1">Getting started</a>
+    <a class="pc-btn" href="{{ readme_url }}" target="_blank" rel="noopener">Read me on GitHub</a>{% if can_manage %}<a class="pc-btn" href="{{ new_url }}" target="_blank">Add an article</a>{% endif %}</div>
+  {% if articles | length > 1 %}<nav class="pc-chips" style="margin:0 0 20px" aria-label="Articles">{% for a in articles %}<a class="pc-chip" href="#{{ a.anchor }}">{{ a.title }}</a>{% endfor %}</nav>{% endif %}
+  {% for a in articles %}<article id="{{ a.anchor }}" class="pc-card" style="margin-bottom:18px;display:block">
+    <div class="pc-head" style="margin-bottom:8px"><h2>{{ a.title }}</h2>{% if can_manage %}<a class="pc-link" href="{{ a.edit }}" target="_blank">Edit this article {{ icon('external') }}</a>{% endif %}</div>
+    <div class="pc-prose wide">{{ a.content or '' }}</div></article>{% endfor %}
+  {% if not articles %}<div class="pc-empty">No guide articles yet. A Website Manager can add them in Desk &gt; Help Article, category PCPB Website Administration.</div>{% endif %}
+</div></section>
+{% endblock %}

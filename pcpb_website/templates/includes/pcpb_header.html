@@ -1,0 +1,51 @@
+{% set s = site() %}
+<a class="pc-skip" href="#pc-main">{{ tr('skip') }}</a>
+{% if can_edit() and not pcpb_edit %}
+<div class="pc-adminbar"><span>{{ tr('editor_bar') }}</span>
+  {% if pcpb_edit_link %}<a href="{{ pcpb_edit_link }}">{{ tr('edit_this_page') }}</a>{% endif %}
+  <a class="sec" href="/page-builder">{{ tr('website_builder') }}</a>
+  <a class="sec" href="/desk/pcpb-website">{{ tr('open_desk') }}</a>
+</div>
+{% endif %}
+{% if s.show_flag_bar %}<div class="pc-flag" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>{% endif %}
+<div class="pc-gov"><div class="pc-wrap">
+  <span>{{ s.gov_bar }}{% if s.phone %} &nbsp;&middot;&nbsp; {{ s.phone }}{% endif %}{% if s.email %} &nbsp;&middot;&nbsp; <a href="mailto:{{ s.email }}">{{ s.email }}</a>{% endif %}</span>
+  <div class="pc-gov-tools">
+    {% set tl = translate_languages() %}{% if tl %}<div class="pc-tr notranslate" translate="no" data-pc-translate>
+      <button type="button" data-pc-tr-open aria-haspopup="true" aria-expanded="false">{{ icon('globe') }} <span data-pc-tr-label>{{ tr('translate') }}</span></button>
+      <div class="pc-tr-menu" hidden><button type="button" data-pc-tr="">{{ tr('translate_original') }}</button>{% for code, name in tl %}<button type="button" data-pc-tr="{{ code }}">{{ name }}</button>{% endfor %}<small>{{ tr('translate_note') }}</small></div>
+    </div>{% endif %}
+    {% if s.show_portal_links %}{% set pt = portals() %}
+      {% if pt.supplier and pt.supplier.show_in_header %}<a href="{{ pt.supplier.home }}">{{ pt.supplier.name }}</a>{% endif %}
+      {% if pt.customer and pt.customer.show_in_header %}
+        {% if frappe.session.user == 'Guest' %}<a href="{{ pt.customer.sign_in }}">{{ tr('sign_in') }}</a><a class="pc-pill" href="{{ pt.customer.sign_up }}">{{ tr('create_account') }}</a>
+        {% else %}<a class="pc-pill" href="{{ pt.customer.home }}">{{ pt.customer.name }}</a>{% endif %}
+      {% endif %}
+    {% endif %}
+    {% if s.allow_text_size %}<button type="button" data-pc-zoom="-1" aria-label="{{ tr('text_smaller') }}">A&minus;</button><button type="button" data-pc-zoom="1" aria-label="{{ tr('text_larger') }}">A+</button>{% endif %}
+    {% if s.allow_dark_mode %}<button type="button" data-pc-dark aria-label="{{ tr('dark_mode') }}">{{ icon('moon') }}</button>{% endif %}
+  </div>
+</div></div>
+{% set tk = ticker() %}
+{% if tk %}<div class="pc-ticker" role="region" aria-label="{{ tr('notices') }}"><div class="pc-wrap">
+  <span class="pc-ticker-label">{{ tr('notices') }}</span>
+  <div class="pc-ticker-view"><div class="pc-ticker-track">{% for t in tk %}<span>{% if t.tag %}<span class="pc-ticker-tag">{{ t.tag }}</span>{% endif %}{% if t.url %}<a href="{{ t.url }}">{{ t.text }}</a>{% else %}{{ t.text }}{% endif %}</span>{% endfor %}</div></div>
+  <button type="button" data-pc-pause aria-label="{{ tr('pause') }}">&#10073;&#10073;</button>
+</div></div>{% endif %}
+<header class="pc-hd"><div class="pc-wrap">
+  <a class="pc-brand" href="{{ lurl('/') }}" translate="no"><img src="{{ logo() }}" alt="{{ s.logo_alt or '' }}" onerror="this.style.display='none'">
+    <span><b>{{ s.site_name }}</b>{% if s.parent_body %}<small>{{ s.parent_body }}</small>{% endif %}</span></a>
+  <button class="pc-burger" type="button" aria-label="{{ tr('menu') }}" aria-controls="pc-nav" aria-expanded="false" data-pc-burger>{{ icon('menu') }}</button>
+  <nav id="pc-nav" class="pc-nav" aria-label="{{ tr('menu') }}">
+    {% for m in menu_tree() %}
+      <div class="pc-nav-item">
+        {% if m.children %}<button type="button" class="pc-nav-link" aria-expanded="false" data-pc-sub>{{ m.label }} {{ icon('caret') }}</button>
+          <div class="pc-sub">{% if m.has_url %}<a href="{{ m.route }}"><b>{{ m.label }}</b></a>{% endif %}{% for c in m.children %}<a href="{{ c.route }}">{{ c.label }}</a>{% endfor %}</div>
+        {% else %}<a class="pc-nav-link" href="{{ m.route }}">{{ m.label }}</a>{% endif %}
+      </div>
+    {% endfor %}
+  </nav>
+  {% if s.show_search %}<form class="pc-hs" role="search" action="/search" method="get">
+    <label class="pc-sr" for="pc-hsq">{{ tr('search') }}</label><input id="pc-hsq" type="search" name="q" placeholder="{{ tr('search') }}&hellip;" autocomplete="off"><button aria-label="{{ tr('search') }}" type="submit">{{ icon('search') }}</button></form>{% endif %}
+</div></header>
+<span id="pc-main" tabindex="-1"></span>

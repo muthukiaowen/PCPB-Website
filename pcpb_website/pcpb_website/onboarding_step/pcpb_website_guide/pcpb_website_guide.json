@@ -1,0 +1,21 @@
+{
+ "action": "View Docs",
+ "action_label": "Open the Guide",
+ "creation": "2026-11-15 09:00:00",
+ "description": "How the site is structured, where each address is served from, hosting, and how to add sections and registers.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 10,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "name": "PCPB Website Guide",
+ "owner": "Administrator",
+ "show_form_tour": 0,
+ "show_full_form": 1,
+ "title": "Read the administrator guide",
+ "validate_action": 0,
+ "path": "/website-guide"
+}

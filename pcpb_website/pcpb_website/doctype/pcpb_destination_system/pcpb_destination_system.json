@@ -1,0 +1,88 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Destination System",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "system_name",
+   "fieldtype": "Data",
+   "label": "System Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "base_url",
+   "fieldtype": "Data",
+   "label": "Entry URL",
+   "in_list_view": 1,
+   "description": "Where Apply goes when a service has no specific link. Leave blank for the PCPB Service Portal (uses the portal URL in PCPB Website Settings). Never put tokens or private data in a URL."
+  },
+  {
+   "fieldname": "is_portal",
+   "fieldtype": "Check",
+   "label": "Is the PCPB Service Portal",
+   "description": "Uses the existing portal login and /apply route."
+  },
+  {
+   "fieldname": "external",
+   "fieldtype": "Check",
+   "label": "Opens outside the PCPB website",
+   "default": "1"
+  },
+  {
+   "fieldname": "verified",
+   "fieldtype": "Check",
+   "label": "URL verified by PCPB",
+   "in_list_view": 1
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Content Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Website Content Approver",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  },
+  {
+   "role": "Website Publisher",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  }
+ ],
+ "autoname": "field:system_name",
+ "title_field": "system_name",
+ "modified": "2026-11-12 09:00:00"
+}

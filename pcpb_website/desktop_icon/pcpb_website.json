@@ -1,0 +1,20 @@
+{
+ "app": "pcpb_website",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon": "globe",
+ "icon_type": "Link",
+ "idx": 3,
+ "label": "PCPB Website",
+ "link_to": "PCPB Website",
+ "link_type": "Workspace Sidebar",
+ "name": "PCPB Website",
+ "owner": "Administrator",
+ "parent_icon": "",
+ "restrict_removal": 0,
+ "roles": [],
+ "standard": 1,
+ "logo_url": "/api/method/pcpb_website.api.app_logo",
+ "modified": "2026-11-11 19:02:32.845956"
+}

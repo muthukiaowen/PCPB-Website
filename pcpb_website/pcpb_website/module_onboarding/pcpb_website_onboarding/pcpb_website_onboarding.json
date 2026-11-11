@@ -1,0 +1,63 @@
+{
+ "allow_roles": [
+  {
+   "role": "Website Manager"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "creation": "2026-11-15 09:00:00",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Website Onboarding",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "is_optional": 0,
+   "step": "PCPB Website Identity"
+  },
+  {
+   "is_optional": 0,
+   "step": "PCPB Website Integration"
+  },
+  {
+   "is_optional": 0,
+   "step": "PCPB Website Contact"
+  },
+  {
+   "is_optional": 0,
+   "step": "PCPB Website Theme"
+  },
+  {
+   "is_optional": 0,
+   "step": "PCPB Website Menu"
+  },
+  {
+   "is_optional": 0,
+   "step": "PCPB Website Pages"
+  },
+  {
+   "is_optional": 1,
+   "step": "PCPB Website Roles"
+  },
+  {
+   "is_optional": 1,
+   "step": "PCPB Website Registers"
+  },
+  {
+   "is_optional": 1,
+   "step": "PCPB Website Posts"
+  },
+  {
+   "is_optional": 1,
+   "step": "PCPB Website Guide"
+  }
+ ],
+ "title": "Set up the PCPB website"
+}

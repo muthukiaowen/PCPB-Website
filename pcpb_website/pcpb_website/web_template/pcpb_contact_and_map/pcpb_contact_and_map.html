@@ -1,0 +1,15 @@
+{% set s = site() %}
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if false %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  <div class="pc-contact"{% if not (show_map and s.map_lat and s.map_lng) %} style="grid-template-columns:1fr"{% endif %}>
+    <div class="pc-card"><dl class="pc-dl">
+      {% if s.address %}<dt>{{ icon('pin') }}</dt><dd>{{ s.address | e | replace('\n', '<br>') | safe }}</dd>{% endif %}
+      {% if s.phone %}<dt>{{ icon('phone') }}</dt><dd><a href="tel:{{ s.phone | replace(' ', '') }}">{{ s.phone }}</a></dd>{% endif %}
+      {% if s.email %}<dt>{{ icon('mail') }}</dt><dd><a href="mailto:{{ s.email }}">{{ s.email }}</a></dd>{% endif %}
+      {% if s.hours %}<dt>{{ icon('clock') }}</dt><dd>{{ s.hours }}</dd>{% endif %}</dl>
+      {% if button_label %}<div class="pc-btn-row"><a class="pc-btn primary" href="{{ lurl(button_url) }}">{{ button_label }}</a></div>{% endif %}</div>
+    {% if show_map and s.map_lat and s.map_lng %}{% set la = s.map_lat | float %}{% set lo = s.map_lng | float %}
+    <div class="pc-map"><iframe title="{{ tr('map') }}" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox={{ lo - 0.01 }}%2C{{ la - 0.006 }}%2C{{ lo + 0.01 }}%2C{{ la + 0.006 }}&amp;layer=mapnik&amp;marker={{ la }}%2C{{ lo }}"></iframe></div>{% endif %}
+  </div>
+  {% set offs = offices() %}{% if show_offices and offs %}<h3 style="margin-top:1.6em">{{ tr('offices') }}</h3><div class="pc-grid">{% for o in offs %}<div class="pc-card"><h3>{{ o.name }}</h3>
+    {% if o.address %}<p>{{ o.address }}</p>{% endif %}{% if o.phone %}<p>{{ icon('phone') }} {{ o.phone }}</p>{% endif %}{% if o.email %}<p>{{ icon('mail') }} {{ o.email }}</p>{% endif %}</div>{% endfor %}</div>{% endif %}
+</div>

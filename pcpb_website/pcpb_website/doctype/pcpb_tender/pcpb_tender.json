@@ -1,0 +1,182 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Tender",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "autoname": "format:TND-{#####}",
+ "title_field": "title",
+ "search_fields": "tender_no,title",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Tender Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "tender_no",
+   "fieldtype": "Data",
+   "label": "Tender Reference No.",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "e.g. PCPB/T/001/2026-27"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Goods\nServices\nWorks\nConsultancy\nDisposal\nOther",
+   "default": "Goods",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "tender_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nClosed\nAwarded\nCancelled",
+   "default": "Open",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Open tenders past their closing date show as Closed automatically."
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "published_on",
+   "fieldtype": "Date",
+   "label": "Published On",
+   "default": "Today"
+  },
+  {
+   "fieldname": "closing_on",
+   "fieldtype": "Datetime",
+   "label": "Closing Date and Time",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "workflow_hint",
+   "fieldtype": "HTML",
+   "label": "",
+   "options": "<p class='text-muted'>Use the workflow buttons (Submit for Review, Approve, Publish) to show this tender on the website.</p>"
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Set by the approval workflow."
+  },
+  {
+   "fieldname": "sb1",
+   "fieldtype": "Section Break",
+   "label": "Summary"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Small Text",
+   "label": "Short Summary",
+   "description": "Shown in lists and on the home page."
+  },
+  {
+   "fieldname": "sb2",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Details and Eligibility"
+  },
+  {
+   "fieldname": "sb3",
+   "fieldtype": "Section Break",
+   "label": "Documents and addenda"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Table",
+   "label": "Documents",
+   "options": "PCPB Tender Document",
+   "description": "Add the tender document, addenda and clarifications here. Public files."
+  },
+  {
+   "fieldname": "sb4",
+   "fieldtype": "Section Break",
+   "label": "Submission and award"
+  },
+  {
+   "fieldname": "submission_note",
+   "fieldtype": "Small Text",
+   "label": "How to Submit",
+   "description": "Address, portal or email for submissions."
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "label": "Contact Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "award_note",
+   "fieldtype": "Small Text",
+   "label": "Award Notice",
+   "description": "Fill in once awarded: bidder and date."
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Content Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Website Content Approver",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  },
+  {
+   "role": "Website Publisher",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  }
+ ],
+ "modified": "2026-11-12 09:00:00"
+}

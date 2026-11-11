@@ -1,0 +1,17 @@
+{% extends "templates/pcpb_page.html" %}
+{% block page_content %}
+<section class="pc-pagehead"><div class="pc-wrap"><h1>{{ title }}</h1>
+  <form class="pc-searchbox big" action="/search" method="get" style="max-width:720px;margin-top:14px">{{ icon('search') }}
+    <input type="search" name="q" value="{{ q | e }}" placeholder="{{ tr('search') }}&hellip;" aria-label="{{ tr('search') }}" autofocus><button class="pc-btn primary" type="submit">{{ tr('search') }}</button></form></div></section>
+<section class="pc-sec"><div class="pc-wrap pc-pad">
+  {% if q and not hits and not pages %}<div class="pc-empty">{{ tr('check_none') }}</div>{% endif %}
+  {% for h in hits %}<div class="pc-head" style="margin-top:1em"><h2 style="font-size:1.2rem">{{ h.title }} <span class="pc-tag {{ {'Banned': 'bad', 'Withdrawn': 'warn', 'Restricted': 'warn'}.get(h.kind, 'ok') }}">{{ h.total }}</span></h2>
+    <a class="pc-link" href="{{ h.url }}{{ '&' if '?' in h.url else '?' }}q={{ q | urlencode }}">{{ tr('view_all') }} {{ icon('arrow') }}</a></div>
+    {% if h.kind in ('Restricted', 'Withdrawn', 'Banned') %}<div class="pc-note pc-{{ 'bad' if h.kind == 'Banned' else 'warn' }}">{{ tr('kind_note_' ~ h.kind | lower) }}</div>{% endif %}
+    <div class="pc-tablewrap"><table class="pc-table"><thead><tr>{% for c in h.columns %}<th>{{ c.label }}</th>{% endfor %}</tr></thead>
+      <tbody translate="no">{% for r in h.rows %}<tr>{% for c in h.columns %}<td>{% if loop.first %}<a href="{{ h.url ~ '/' ~ (r.name | urlencode) }}">{{ (r[c.fieldname] or r.name) | e }}</a>{% else %}{{ (r[c.fieldname] or '') | e }}{% endif %}</td>{% endfor %}</tr>{% endfor %}</tbody></table></div>
+  {% endfor %}
+  {% if pages %}<div class="pc-head" style="margin-top:1.4em"><h2 style="font-size:1.2rem">{{ tr('pages_and_news') }}</h2></div>
+    <div class="pc-list">{% for p in pages %}<a class="pc-row" href="{{ p.url }}" style="text-decoration:none;color:inherit"><div><small>{{ p.kind }}</small><h3>{{ p.title | e }}</h3></div>{{ icon('arrow') }}</a>{% endfor %}</div>{% endif %}
+</div></section>
+{% endblock %}

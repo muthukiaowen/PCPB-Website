@@ -1,0 +1,100 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Document",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "reqd": 1,
+   "in_list_view": 1,
+   "options": "Acts and Regulations\nForms\nGuidelines\nNotices\nTenders\nReports\nRegisters\nPublications\nOther\nApplication Forms\nApproved Labels\nPublic Awareness\nCitizen Service Charter\nInstitutional Documents\nStrategic Plans"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Data",
+   "label": "Year",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "publish_date",
+   "fieldtype": "Date",
+   "label": "Publish Date"
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "legacy_url",
+   "fieldtype": "Data",
+   "label": "Legacy Url",
+   "description": "Original pcpb.go.ke URL, kept for redirects"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Content Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Website Content Approver",
+   "read": 1,
+   "write": 1
+  },
+  {
+   "role": "Website Publisher",
+   "read": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "autoname": "format:DOC-{#####}",
+ "title_field": "title",
+ "track_changes": 1,
+ "modified": "2026-11-12 09:00:00"
+}

@@ -1,0 +1,46 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "subtitle",
+   "fieldtype": "Small Text",
+   "label": "Text under the heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Table Break",
+   "label": "Pictures",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Picture",
+   "reqd": 0
+  },
+  {
+   "fieldname": "caption",
+   "fieldtype": "Data",
+   "label": "Caption",
+   "reqd": 0
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 12:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Gallery",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

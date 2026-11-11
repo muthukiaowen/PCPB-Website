@@ -1,0 +1,21 @@
+{% extends "templates/pcpb_page.html" %}
+{% block page_content %}
+<section class="pc-pagehead"><div class="pc-wrap">
+  <nav class="pc-crumbs" aria-label="Breadcrumb"><a href="{{ lurl('/') }}">{{ tr('home') }}</a><span>&rsaquo;</span><a href="{{ lurl('/tenders') }}">{{ tr('tenders_title') }}</a></nav>
+  <h1>{{ tender.title }}</h1>{% if tender.summary %}<p class="pc-lead">{{ tender.summary }}</p>{% endif %}</div></section>
+<section class="pc-sec"><div class="pc-wrap pc-pad pc-narrow">
+  <dl class="pc-stats" style="--cols:3;margin-bottom:22px">
+    <div><dt>{{ tr('tender_no') }}</dt><dd style="font-size:1.1rem">{{ tender.tender_no or tender.name }}</dd></div>
+    <div><dt>{{ tr('tender_closes') }}</dt><dd style="font-size:1.1rem">{{ frappe.utils.format_datetime(tender.closing_on, "d MMM yyyy, HH:mm") if tender.closing_on else tr('tbc') }}</dd></div>
+    <div><dt>{{ tr('status') }}</dt><dd style="font-size:1.1rem"><span class="pc-tag {{ {'Open': 'ok', 'Awarded': 'info', 'Cancelled': 'bad'}.get(tender.status, '') }}">{{ tender.status_label }}</span>{% if tender.category %} {{ tender.category }}{% endif %}</dd></div>
+  </dl>
+  {% if tender.body %}<div class="pc-prose">{{ tender.body }}</div>{% endif %}
+  {% if tender.documents %}<h2 style="margin-top:1.2em;font-size:1.3rem">{{ tr('tender_docs') }}</h2>
+  <div class="pc-list">{% for d in tender.documents %}<a class="pc-file" href="{{ d.file }}" target="_blank" rel="noopener"><b>{{ (d.file.rsplit('.', 1)[-1] | upper)[:4] }}</b><span>{{ d.label or d.type }}<small>{{ d.type or '' }}</small></span>{{ icon('download') }}</a>{% endfor %}</div>{% endif %}
+  {% if tender.submission %}<h2 style="margin-top:1.2em;font-size:1.3rem">{{ tr('tender_submit') }}</h2><p>{{ tender.submission }}</p>{% endif %}
+  {% set sp = portals().supplier %}{% if sp and tender.status == 'Open' %}<div class="pc-btn-row" style="margin-top:8px"><a class="pc-btn primary" href="{{ sp.sign_in }}">{{ tr('supplier_portal_go') }} {{ icon('arrow') }}</a></div>{% endif %}
+  {% if tender.contact %}<p><strong>{{ tr('contact_us') }}:</strong> <a href="mailto:{{ tender.contact }}">{{ tender.contact }}</a></p>{% endif %}
+  {% if tender.award %}<h2 style="margin-top:1.2em;font-size:1.3rem">{{ tr('tender_award') }}</h2><p>{{ tender.award }}</p>{% endif %}
+  <div class="pc-btn-row"><a class="pc-btn" href="{{ lurl('/tenders') }}">&larr; {{ tr('tender_back') }}</a></div>
+</div></section>
+{% endblock %}

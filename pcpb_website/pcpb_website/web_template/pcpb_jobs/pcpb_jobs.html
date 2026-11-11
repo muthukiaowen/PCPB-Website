@@ -1,0 +1,8 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if view_all_url %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  {% set rows = vacancies(limit or 20) %}
+  <div class="pc-list">{% for v in rows %}<div class="pc-row"><div>
+    <small>{{ icon('briefcase') }} {{ v.department or '' }}{% if v.employment_type %} &middot; {{ v.employment_type }}{% endif %}</small>
+    <h3>{{ v.job_title or v.designation or v.name }}</h3>
+    <p>{% if v.location %}{{ tr('location') }}: {{ v.location }}{% endif %}{% if v.closes_text %}{% if v.location %} &middot; {% endif %}{{ tr('closes') }}: {{ v.closes_text }}{% endif %}</p></div>
+    {% if v.url %}<a class="pc-btn primary sm" href="{{ v.url }}">{{ tr('apply_job') }}</a>{% endif %}</div>{% endfor %}</div>
+  {% if not rows %}<div class="pc-empty">{{ empty_text or tr('careers_none') }}</div>{% endif %}</div>

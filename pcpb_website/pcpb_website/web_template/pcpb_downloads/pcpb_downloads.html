@@ -1,0 +1,6 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if view_all_url %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  {% set rows = documents(category, limit or 50) %}
+  {% macro file(d) %}<a class="pc-file" href="{{ d.url }}" target="_blank" rel="noopener"><b>{{ d.ext }}</b><span>{{ d.title }}<small>{{ d.category }}{% if d.year %} &middot; {{ d.year }}{% endif %}</small></span>{{ icon('download') }}</a>{% endmacro %}
+  {% if group_by and (category or 'All') == 'All' %}{% for cat, items in rows | groupby('category') %}<h3 style="margin-top:1.2em">{{ cat }}</h3><div class="pc-grid" style="--cols:2;margin-bottom:18px">{% for d in items %}{{ file(d) }}{% endfor %}</div>{% endfor %}
+  {% else %}<div class="pc-grid" style="--cols:2">{% for d in rows %}{{ file(d) }}{% endfor %}</div>{% endif %}
+  {% if not rows %}<div class="pc-empty">{{ tr('documents_none') }}</div>{% endif %}</div>

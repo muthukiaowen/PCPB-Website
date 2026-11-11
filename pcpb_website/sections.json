@@ -1,0 +1,194 @@
+{
+ "PCPB Hero": {
+  "label": "Hero",
+  "category": "Layout",
+  "description": "Large opening banner with heading, buttons and the optional product status check box.",
+  "icon": "star",
+  "order": 10,
+  "data": ""
+ },
+ "PCPB Page Header": {
+  "label": "Page Header",
+  "category": "Layout",
+  "description": "Coloured title band for the top of an inside page, with the breadcrumb trail.",
+  "icon": "square",
+  "order": 20,
+  "data": ""
+ },
+ "PCPB Slider": {
+  "label": "Slider",
+  "category": "Layout",
+  "description": "Rotating slides with a picture, heading, text and a button each.",
+  "icon": "image",
+  "order": 30,
+  "data": ""
+ },
+ "PCPB Text": {
+  "label": "Text",
+  "category": "Content",
+  "description": "A heading and formatted text: paragraphs, lists, links, pictures and tables.",
+  "icon": "doc",
+  "order": 40,
+  "data": ""
+ },
+ "PCPB Cards": {
+  "label": "Cards",
+  "category": "Content",
+  "description": "Cards or tiles with an icon or picture, text and a link. As a grid or a carousel.",
+  "icon": "grid",
+  "order": 50,
+  "data": ""
+ },
+ "PCPB Image and Text": {
+  "label": "Image and Text",
+  "category": "Content",
+  "description": "A picture beside a heading, text and a button.",
+  "icon": "image",
+  "order": 60,
+  "data": ""
+ },
+ "PCPB Numbers": {
+  "label": "Numbers",
+  "category": "Content",
+  "description": "A row of key figures (for example: products registered, premises licensed).",
+  "icon": "check",
+  "order": 70,
+  "data": "Registers"
+ },
+ "PCPB Call to Action": {
+  "label": "Call to Action",
+  "category": "Content",
+  "description": "A highlighted band with a short message and a button.",
+  "icon": "megaphone",
+  "order": 80,
+  "data": ""
+ },
+ "PCPB Tabs": {
+  "label": "Tabs",
+  "category": "Content",
+  "description": "Several panels of text; the visitor switches between them with tabs.",
+  "icon": "grid",
+  "order": 90,
+  "data": ""
+ },
+ "PCPB Questions and Answers": {
+  "label": "Questions and Answers",
+  "category": "Content",
+  "description": "A list of questions that open to show the answer.",
+  "icon": "check",
+  "order": 100,
+  "data": ""
+ },
+ "PCPB Gallery": {
+  "label": "Gallery",
+  "category": "Content",
+  "description": "A grid of photographs that open large when clicked.",
+  "icon": "image",
+  "order": 110,
+  "data": ""
+ },
+ "PCPB Custom HTML": {
+  "label": "Custom HTML",
+  "category": "Content",
+  "description": "For ICT staff: your own HTML. Jinja is allowed.",
+  "icon": "form",
+  "order": 120,
+  "data": ""
+ },
+ "PCPB Register Search": {
+  "label": "Register Search",
+  "category": "Live data",
+  "description": "A search box that checks every public register at once.",
+  "icon": "search",
+  "order": 200,
+  "data": "Registers"
+ },
+ "PCPB Register Index": {
+  "label": "Register Index",
+  "category": "Live data",
+  "description": "Cards for every public register, grouped. New registers appear here by themselves.",
+  "icon": "grid",
+  "order": 210,
+  "data": "Registers"
+ },
+ "PCPB Register Table": {
+  "label": "Register Table",
+  "category": "Live data",
+  "description": "One register shown as a searchable table, read live from the ERP.",
+  "icon": "grid",
+  "order": 220,
+  "data": "Registers"
+ },
+ "PCPB Registers Strip": {
+  "label": "Registers Strip",
+  "category": "Live data",
+  "description": "A moving strip naming every register with its record count.",
+  "icon": "leaf",
+  "order": 230,
+  "data": "Registers"
+ },
+ "PCPB News": {
+  "label": "News",
+  "category": "Live data",
+  "description": "The latest news, notices and circulars. New posts appear here by themselves.",
+  "icon": "megaphone",
+  "order": 240,
+  "data": "Posts"
+ },
+ "PCPB Tenders": {
+  "label": "Tenders",
+  "category": "Live data",
+  "description": "Tenders from the Tenders list. Closed ones move to the archive by themselves.",
+  "icon": "gavel",
+  "order": 250,
+  "data": "Tenders"
+ },
+ "PCPB Jobs": {
+  "label": "Jobs",
+  "category": "Live data",
+  "description": "Open vacancies, read live from HR (Job Opening). Applying happens on the HR job page.",
+  "icon": "briefcase",
+  "order": 260,
+  "data": "HR Job Openings"
+ },
+ "PCPB Leadership": {
+  "label": "Leadership",
+  "category": "Live data",
+  "description": "The Board and management, from the Leadership list, as a grid or a carousel. Only current office holders show.",
+  "icon": "users",
+  "order": 270,
+  "data": "Leadership"
+ },
+ "PCPB Services": {
+  "label": "Services",
+  "category": "Live data",
+  "description": "The Board's online services, read live from the portal. Apply takes the visitor to the portal.",
+  "icon": "form",
+  "order": 280,
+  "data": "Portal services"
+ },
+ "PCPB Downloads": {
+  "label": "Downloads",
+  "category": "Live data",
+  "description": "Documents from the Documents list (forms, guidelines, reports), by category.",
+  "icon": "download",
+  "order": 290,
+  "data": "Documents"
+ },
+ "PCPB Contact and Map": {
+  "label": "Contact and Map",
+  "category": "Live data",
+  "description": "Address, phone, opening hours, the map and the offices, from Settings > Contact.",
+  "icon": "pin",
+  "order": 300,
+  "data": "Settings > Contact"
+ },
+ "PCPB Form": {
+  "label": "Form",
+  "category": "Live data",
+  "description": "A web form (built in Desk > Web Form). What visitors submit lands in the ERP record the form writes to.",
+  "icon": "form",
+  "order": 310,
+  "data": "Web Forms"
+ }
+}

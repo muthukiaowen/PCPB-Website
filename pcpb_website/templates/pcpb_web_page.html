@@ -1,0 +1,12 @@
+{% extends "templates/pcpb_page.html" %}
+{% block meta_block %}{% include "templates/includes/meta_block.html" %}{% endblock %}
+{% block page_content %}
+{%- if pcpb_is_builder_page -%}
+<div id="pb-canvas" data-page="{{ pcpb_page }}">{{ pcpb_blocks_html | safe }}</div>
+{%- else -%}
+<section class="pc-pagehead"><div class="pc-wrap"><h1>{{ title }}</h1></div></section>
+<section class="pc-sec"><div class="pc-wrap pc-pad"><div class="pc-prose">{{ main_section or "" }}</div></div></section>
+{%- endif -%}
+{% endblock %}
+{% block style %}{% if style %}<style>{{ style }}</style>{% endif %}{% endblock %}
+{% block script %}{% if script %}<script>{{ script }}</script>{% endif %}{% endblock %}

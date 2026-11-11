@@ -1,0 +1,11 @@
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "pcpb_website"
+authors = [{ name = "Titansoft", email = "info@titansoft.africa" }]
+description = "PCPB public website on the Frappe Website module"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]

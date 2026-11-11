@@ -1,0 +1,25 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB FAQ",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "question",
+   "fieldtype": "Data",
+   "label": "Question",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "answer",
+   "fieldtype": "Small Text",
+   "label": "Answer",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "editable_grid": 1,
+ "modified": "2026-11-12 09:00:00"
+}

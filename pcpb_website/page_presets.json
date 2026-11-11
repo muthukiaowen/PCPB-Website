@@ -1,0 +1,129 @@
+{
+ "blank": {
+  "label": "Empty page",
+  "description": "Start with nothing and add sections.",
+  "blocks": []
+ },
+ "standard": {
+  "label": "Text page",
+  "description": "A title band and a text section. Good for policies and information pages.",
+  "blocks": [
+   {
+    "web_template": "PCPB Page Header",
+    "values": {
+     "title": "{{title}}",
+     "show_crumbs": 1
+    },
+    "shade": 0
+   },
+   {
+    "web_template": "PCPB Text",
+    "values": {
+     "content": "<p>Write your text here.</p>"
+    },
+    "shade": 0
+   }
+  ]
+ },
+ "landing": {
+  "label": "Landing page",
+  "description": "Banner, cards, text with picture and a call to action.",
+  "blocks": [
+   {
+    "web_template": "PCPB Hero",
+    "values": {
+     "title": "{{title}}",
+     "text": "A short introduction.",
+     "show_check": 0
+    },
+    "shade": 0
+   },
+   {
+    "web_template": "PCPB Cards",
+    "values": {
+     "title": "Highlights",
+     "columns": "3",
+     "cards": [
+      {
+       "icon": "leaf",
+       "title": "First card",
+       "text": "Text"
+      },
+      {
+       "icon": "shield",
+       "title": "Second card",
+       "text": "Text"
+      },
+      {
+       "icon": "doc",
+       "title": "Third card",
+       "text": "Text"
+      }
+     ]
+    },
+    "shade": 0
+   },
+   {
+    "web_template": "PCPB Image and Text",
+    "values": {
+     "title": "A heading",
+     "content": "<p>Text beside a picture.</p>"
+    },
+    "shade": 0
+   },
+   {
+    "web_template": "PCPB Call to Action",
+    "values": {
+     "title": "A closing message",
+     "button_label": "Contact us",
+     "button_url": "/contact-us"
+    },
+    "shade": 0
+   }
+  ]
+ },
+ "list": {
+  "label": "Documents page",
+  "description": "A title band and a list of documents from one category.",
+  "blocks": [
+   {
+    "web_template": "PCPB Page Header",
+    "values": {
+     "title": "{{title}}",
+     "show_crumbs": 1
+    },
+    "shade": 0
+   },
+   {
+    "web_template": "PCPB Downloads",
+    "values": {
+     "category": "All",
+     "limit": 100,
+     "group_by": 0
+    },
+    "shade": 0
+   }
+  ]
+ },
+ "form": {
+  "label": "Form page",
+  "description": "A title band and a web form. What visitors submit goes into the ERP.",
+  "blocks": [
+   {
+    "web_template": "PCPB Page Header",
+    "values": {
+     "title": "{{title}}",
+     "show_crumbs": 1
+    },
+    "shade": 0
+   },
+   {
+    "web_template": "PCPB Form",
+    "values": {
+     "display": "On the page"
+    },
+    "shade": 0
+   }
+  ]
+ }
+}

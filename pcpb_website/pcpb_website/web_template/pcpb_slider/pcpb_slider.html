@@ -1,0 +1,9 @@
+<div class="pc-wrap pc-pad" style="padding-bottom:0">
+<div class="pc-slider" data-pc-slider="{{ seconds or 6 }}" aria-roledescription="carousel">
+  {% for s in slides or [] %}<div class="pc-slide{{ ' on' if loop.first }}"{% if s.image %} style="--pc-img:url('{{ s.image }}')"{% endif %}><div>
+    <h2>{{ s.title or '' }}</h2>{% if s.text %}<p>{{ s.text }}</p>{% endif %}
+    {% if s.button_label %}<a class="pc-btn gold sm" href="{{ lurl(s.button_url) }}">{{ s.button_label }} {{ icon('arrow') }}</a>{% endif %}</div></div>{% endfor %}
+  {% if (slides or []) | length > 1 %}<button type="button" class="pc-slider-nav prev" aria-label="{{ tr('previous') }}">&lsaquo;</button><button type="button" class="pc-slider-nav next" aria-label="{{ tr('next') }}">&rsaquo;</button>
+  <div class="pc-dots">{% for s in slides %}<button type="button" class="{{ 'on' if loop.first }}" aria-label="{{ loop.index }}"></button>{% endfor %}</div>{% endif %}
+  {% if not slides %}<div class="pc-slide on"><div><h2>{{ tr('slider_empty') }}</h2></div></div>{% endif %}
+</div></div>

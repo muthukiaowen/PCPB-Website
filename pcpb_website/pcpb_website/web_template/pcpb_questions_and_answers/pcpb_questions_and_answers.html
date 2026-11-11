@@ -1,0 +1,2 @@
+<div class="pc-wrap pc-pad pc-narrow">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if false %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  {% for i in items or [] %}<details class="pc-acc"><summary>{{ i.question or '' }}</summary><div>{{ md(i.answer) }}</div></details>{% endfor %}</div>

@@ -1,0 +1,168 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Leader",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "autoname": "format:LDR-{#####}",
+ "title_field": "full_name",
+ "search_fields": "full_name,official_title",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1,
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "official_title",
+   "fieldtype": "Data",
+   "label": "Official Title",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "e.g. Board Chairperson, Chief Executive Officer"
+  },
+  {
+   "fieldname": "leader_group",
+   "fieldtype": "Select",
+   "label": "Group",
+   "options": "Board Chairperson\nChief Executive Officer\nBoard Member\nExecutive Management\nDepartment Head\nOther",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "tenure_status",
+   "fieldtype": "Select",
+   "label": "Tenure",
+   "options": "Current\nHistorical",
+   "default": "Current",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "description": "Historical profiles never appear in current leadership sections."
+  },
+  {
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display Order",
+   "default": "10"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "effective_from",
+   "fieldtype": "Date",
+   "label": "Effective From"
+  },
+  {
+   "fieldname": "effective_to",
+   "fieldtype": "Date",
+   "label": "Effective To",
+   "description": "Leave blank while in office. Setting a date does not publish or hide anything by itself."
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Set by the approval workflow."
+  },
+  {
+   "fieldname": "sb1",
+   "fieldtype": "Section Break",
+   "label": "Photograph"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Official Photograph",
+   "description": "Portrait, 4:5 ratio, at least 600 x 750 px, JPG or WebP, under 500 KB."
+  },
+  {
+   "fieldname": "photo_alt",
+   "fieldtype": "Data",
+   "label": "Photo Description (alt text)",
+   "description": "Read by screen readers, e.g. 'Portrait of the Chief Executive Officer'."
+  },
+  {
+   "fieldname": "sb2",
+   "fieldtype": "Section Break",
+   "label": "Biography"
+  },
+  {
+   "fieldname": "bio",
+   "fieldtype": "Text Editor",
+   "label": "Biography"
+  },
+  {
+   "fieldname": "sb3",
+   "fieldtype": "Section Break",
+   "label": "Optional contact and documents"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Official Email",
+   "options": "Email",
+   "description": "Shown publicly only if filled. Leave blank unless authorised."
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Official Phone"
+  },
+  {
+   "fieldname": "document",
+   "fieldtype": "Attach",
+   "label": "Linked Document",
+   "description": "e.g. a speech, profile PDF or appointment notice. Public file."
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Content Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Website Content Approver",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  },
+  {
+   "role": "Website Publisher",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  }
+ ],
+ "modified": "2026-11-12 09:00:00"
+}

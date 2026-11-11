@@ -1,0 +1,9 @@
+{% extends "templates/pcpb_page.html" %}
+{% block page_content %}
+<div id="pb-root" data-page="{{ pb_page or '' }}">
+  {% if pb_page %}<div id="pb-canvas" data-page="{{ pb_page }}">{{ pcpb_blocks_html | safe }}</div>
+  {% else %}<div id="pb-home"></div>{% endif %}
+</div>
+{% endblock %}
+{% block style %}<link rel="stylesheet" href="/assets/pcpb_website/css/builder.css?v={{ asset_version() }}">{% endblock %}
+{% block script %}<script src="/assets/pcpb_website/js/builder.js?v={{ pb_version }}"></script>{% endblock %}

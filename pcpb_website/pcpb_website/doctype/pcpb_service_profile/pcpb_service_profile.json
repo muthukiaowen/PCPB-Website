@@ -1,0 +1,200 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Service Profile",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "Service",
+   "options": "Service",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "description": "The portal Service this page describes. Name, group, fee and turnaround still come from the Service record."
+  },
+  {
+   "fieldname": "slug",
+   "fieldtype": "Data",
+   "label": "Page address (slug)",
+   "description": "e.g. new-product-registration. Leave blank to generate from the service name."
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published",
+   "read_only": 1,
+   "in_list_view": 1,
+   "description": "Set by the approval workflow. A service with a profile is shown only while its profile is published."
+  },
+  {
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "label": "Featured on home page",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display order",
+   "default": "10"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "application_method",
+   "fieldtype": "Select",
+   "label": "Application method",
+   "options": "Online\nIn person\nOnline and in person\nInformation only",
+   "default": "Online"
+  },
+  {
+   "fieldname": "destination_system",
+   "fieldtype": "Link",
+   "label": "Destination system",
+   "options": "PCPB Destination System",
+   "description": "Category never changes where Apply goes. This does."
+  },
+  {
+   "fieldname": "application_url",
+   "fieldtype": "Data",
+   "label": "Application URL (optional)",
+   "description": "Approved service-specific link. Blank = the destination's entry URL, or the portal /apply route for the portal."
+  },
+  {
+   "fieldname": "information_url",
+   "fieldtype": "Data",
+   "label": "Supporting information URL (optional)"
+  },
+  {
+   "fieldname": "sb1",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "short",
+   "fieldtype": "Small Text",
+   "label": "Short description"
+  },
+  {
+   "fieldname": "detail",
+   "fieldtype": "Text Editor",
+   "label": "Detailed description"
+  },
+  {
+   "fieldname": "sb2",
+   "fieldtype": "Section Break",
+   "label": "Who, what and how (one item per line)"
+  },
+  {
+   "fieldname": "audience",
+   "fieldtype": "Small Text",
+   "label": "Target audience"
+  },
+  {
+   "fieldname": "eligibility",
+   "fieldtype": "Small Text",
+   "label": "Eligibility"
+  },
+  {
+   "fieldname": "documents",
+   "fieldtype": "Small Text",
+   "label": "Required documents"
+  },
+  {
+   "fieldname": "steps",
+   "fieldtype": "Small Text",
+   "label": "Application steps"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break",
+   "label": ""
+  },
+  {
+   "fieldname": "fee_text",
+   "fieldtype": "Data",
+   "label": "Fee information (verified)",
+   "description": "Blank shows 'To be confirmed'. The live fee from the Service's fee schedule is also shown when it exists."
+  },
+  {
+   "fieldname": "time_text",
+   "fieldtype": "Data",
+   "label": "Indicative processing time (verified)",
+   "description": "Blank falls back to the Service turnaround days, else 'To be confirmed'."
+  },
+  {
+   "fieldname": "legal",
+   "fieldtype": "Small Text",
+   "label": "Legal and regulatory references"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "label": "Responsible department or contact"
+  },
+  {
+   "fieldname": "related",
+   "fieldtype": "Small Text",
+   "label": "Related services (Service names, one per line)"
+  },
+  {
+   "fieldname": "sb3",
+   "fieldtype": "Section Break",
+   "label": "Frequently asked questions"
+  },
+  {
+   "fieldname": "faqs",
+   "fieldtype": "Table",
+   "label": "FAQs",
+   "options": "PCPB FAQ"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "share": 1,
+   "export": 1
+  },
+  {
+   "role": "Website Content Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  },
+  {
+   "role": "Website Content Approver",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  },
+  {
+   "role": "Website Publisher",
+   "read": 1,
+   "write": 1,
+   "create": 0
+  }
+ ],
+ "autoname": "field:service",
+ "title_field": "service",
+ "track_changes": 1,
+ "modified": "2026-11-12 09:00:00"
+}

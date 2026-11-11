@@ -1,0 +1,3 @@
+<div class="pc-wrap pc-pad">{% if title %}<div class="pc-head"><h2>{{ title }}</h2></div>{% endif %}
+  <div data-pc-tabs><div class="pc-tabs-bar" role="tablist">{% for t in tabs or [] %}<button type="button" class="pc-tab" role="tab" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ t.label or loop.index }}</button>{% endfor %}</div>
+  {% for t in tabs or [] %}<div class="pc-prose wide" role="tabpanel"{% if not loop.first %} hidden{% endif %}>{{ md(t.content) }}</div>{% endfor %}</div></div>

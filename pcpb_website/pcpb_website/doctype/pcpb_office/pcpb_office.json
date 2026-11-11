@@ -1,0 +1,65 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Office",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "office_name",
+   "fieldtype": "Data",
+   "label": "Office Name",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address",
+   "in_list_view": 1,
+   "columns": 3
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "lat",
+   "fieldtype": "Data",
+   "label": "Latitude"
+  },
+  {
+   "fieldname": "lng",
+   "fieldtype": "Data",
+   "label": "Longitude"
+  }
+ ],
+ "field_order": [
+  "office_name",
+  "address",
+  "phone",
+  "email",
+  "lat",
+  "lng"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-11 10:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [],
+ "istable": 1,
+ "editable_grid": 1
+}

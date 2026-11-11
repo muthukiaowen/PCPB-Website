@@ -1,0 +1,5 @@
+<div class="pc-wrap pc-pad"><div class="pc-split{{ ' rev' if image_side == 'Left' }}">
+  <div class="pc-prose">{% if title %}<h2>{{ title }}</h2>{% endif %}{{ md(content) }}
+    {% if button_label %}<div class="pc-btn-row"><a class="pc-btn primary" href="{{ lurl(button_url) }}">{{ button_label }} {{ icon('arrow') }}</a></div>{% endif %}</div>
+  <div>{% if image %}<img src="{{ image }}" alt="{{ image_alt or '' }}">{% else %}<div class="pc-empty">{{ tr('image_empty') }}</div>{% endif %}</div>
+</div></div>

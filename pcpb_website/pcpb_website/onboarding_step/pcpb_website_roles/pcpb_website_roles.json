@@ -1,0 +1,21 @@
+{
+ "action": "Go to Page",
+ "action_label": "Open Users",
+ "creation": "2026-11-15 09:00:00",
+ "description": "Website Manager administers settings, theme, menu and integration. Website Content Editor drafts, Website Content Approver reviews and Website Publisher publishes. The approval steps are the Workflow named PCPB Web Page Publishing.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 7,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "name": "PCPB Website Roles",
+ "owner": "Administrator",
+ "show_form_tour": 0,
+ "show_full_form": 1,
+ "title": "Assign website roles to users",
+ "validate_action": 0,
+ "path": "user"
+}

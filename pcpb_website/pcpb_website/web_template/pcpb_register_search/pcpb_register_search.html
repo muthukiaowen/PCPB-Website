@@ -1,0 +1,5 @@
+<div class="pc-wrap pc-pad pc-narrow pc-center">{% if title %}<h2>{{ title }}</h2>{% endif %}{% if subtitle %}<p class="pc-muted">{{ subtitle }}</p>{% endif %}
+  <div data-pc-check data-none="{{ tr('check_none') }}" data-more="{{ tr('view_all') }}">
+  <form class="pc-searchbox big" action="/search" method="get">{{ icon('search') }}<input type="search" name="q" placeholder="{{ placeholder or tr('search') }}" autocomplete="off" aria-label="{{ tr('search') }}"><button class="pc-btn primary" type="submit">{{ tr('search') }}</button></form>
+  {% if chips %}<div class="pc-chips" style="justify-content:center">{% for c in lines(chips) %}<a class="pc-chip" href="/search?q={{ c | urlencode }}">{{ c }}</a>{% endfor %}</div>{% endif %}
+  <div class="pc-hits" aria-live="polite"></div></div></div>

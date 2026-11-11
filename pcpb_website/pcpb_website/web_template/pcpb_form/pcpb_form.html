@@ -1,0 +1,5 @@
+<div class="pc-wrap pc-pad{{ '' if display == 'On the page' else ' pc-narrow pc-center' }}">{% if title %}<h2>{{ title }}</h2>{% endif %}{% if subtitle %}<p class="pc-muted">{{ subtitle }}</p>{% endif %}
+  {% set route = frappe.db.get_value('Web Form', web_form, 'route') if web_form else None %}
+  {% if route %}{% if display == 'On the page' %}<iframe class="pc-embed" style="min-height:{{ height or 760 }}px" src="/{{ route }}/new" title="{{ title or web_form }}" loading="lazy"></iframe>
+    {% else %}<a class="pc-btn primary" href="/{{ route }}/new">{{ button_label or title or web_form }} {{ icon('arrow') }}</a>{% endif %}
+  {% else %}<div class="pc-empty">{{ tr('form_pick') }}</div>{% endif %}</div>

@@ -1,0 +1,56 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "subtitle",
+   "fieldtype": "Small Text",
+   "label": "Text under the heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "web_form",
+   "fieldtype": "Link",
+   "label": "Web form",
+   "reqd": 0,
+   "options": "Web Form"
+  },
+  {
+   "fieldname": "display",
+   "fieldtype": "Select",
+   "label": "Show as",
+   "reqd": 0,
+   "options": "Button\nOn the page",
+   "default": "Button"
+  },
+  {
+   "fieldname": "button_label",
+   "fieldtype": "Data",
+   "label": "Button label",
+   "reqd": 0
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Int",
+   "label": "Height when on the page (px)",
+   "reqd": 0,
+   "default": "760"
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 12:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Form",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

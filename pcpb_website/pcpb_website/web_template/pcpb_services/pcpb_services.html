@@ -1,0 +1,7 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if view_all_url %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  {% set rows = featured_services(limit or 6) if (mode or 'Featured') == 'Featured' else services() %}
+  {% macro card(s) %}<div class="pc-card"><small>{{ s.group_label }}</small><h3><a href="{{ lurl('/online-services/' ~ s.slug) }}" style="text-decoration:none;color:inherit">{{ s.name }}</a></h3><p>{{ s.short }}</p>
+    <div class="pc-btn-row" style="margin-top:auto"><a class="pc-btn sm" href="{{ lurl('/online-services/' ~ s.slug) }}">{{ tr('details') }}</a>{% include "templates/includes/pcpb_apply.html" %}</div></div>{% endmacro %}
+  {% if mode == 'All' and group_by %}{% for grp, items in rows | groupby('group_label') %}<h3 style="margin-top:1.2em">{{ grp }}</h3><div class="pc-grid" style="margin-bottom:18px">{% for s in items %}{{ card(s) }}{% endfor %}</div>{% endfor %}
+  {% else %}<div class="pc-grid">{% for s in rows %}{{ card(s) }}{% endfor %}</div>{% endif %}
+  {% if not rows %}<div class="pc-empty">{{ tr('services_none') }}</div>{% endif %}</div>

@@ -1,0 +1,21 @@
+{
+ "action": "Go to Page",
+ "action_label": "Open the Website Builder",
+ "creation": "2026-11-15 09:00:00",
+ "description": "A page is a standard Web Page made of sections (Web Templates). Drag sections in, edit them, save a draft, then publish through the Web Page workflow. Visitors see a change only after it is published.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 6,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "name": "PCPB Website Pages",
+ "owner": "Administrator",
+ "show_form_tour": 0,
+ "show_full_form": 1,
+ "title": "Edit and publish a page",
+ "validate_action": 0,
+ "path": "/page-builder"
+}

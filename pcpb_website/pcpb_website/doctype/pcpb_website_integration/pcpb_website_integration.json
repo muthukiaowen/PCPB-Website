@@ -1,0 +1,185 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Website Integration",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "sb_deploy",
+   "fieldtype": "Section Break",
+   "label": "Deployment"
+  },
+  {
+   "fieldname": "deployment_mode",
+   "fieldtype": "Select",
+   "label": "Deployment Mode",
+   "options": "Single server (website and ERP together)\nWebsite server (ERP hosted separately)\nERP server (website hosted separately)",
+   "reqd": 1,
+   "default": "Single server (website and ERP together)",
+   "description": "How the public website and the ERP are hosted. The PCPB Website app is installed on each server and this setting says which part that server plays."
+  },
+  {
+   "fieldname": "cb_deploy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "deploy_help",
+   "fieldtype": "HTML",
+   "label": "Deployment Help",
+   "options": "<p class='text-muted'><b>Single server</b>: one site runs the website and the ERP; nothing else to set.<br><b>Website server</b>: this site shows the public website and reads registers, services and vacancies from the ERP through its API.<br><b>ERP server</b>: this site holds the records and answers the website's API requests; it shows no public website.</p>"
+  },
+  {
+   "fieldname": "sb_api",
+   "fieldtype": "Section Break",
+   "label": "ERP API connection",
+   "depends_on": "eval:doc.deployment_mode=='Website server (ERP hosted separately)'"
+  },
+  {
+   "fieldname": "erp_url",
+   "fieldtype": "Data",
+   "label": "ERP Address",
+   "options": "URL",
+   "mandatory_depends_on": "eval:doc.deployment_mode=='Website server (ERP hosted separately)'",
+   "description": "Base address of the ERP site, for example https://erp.pcpb.go.ke"
+  },
+  {
+   "fieldname": "api_key",
+   "fieldtype": "Data",
+   "label": "API Key",
+   "description": "From the integration user on the ERP: User > Settings > API Access"
+  },
+  {
+   "fieldname": "api_secret",
+   "fieldtype": "Password",
+   "label": "API Secret"
+  },
+  {
+   "fieldname": "cb_api",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cache_seconds",
+   "fieldtype": "Int",
+   "label": "Cache Duration (seconds)",
+   "default": "120",
+   "description": "How long an ERP answer is reused before the ERP is asked again. 0 turns caching off."
+  },
+  {
+   "fieldname": "request_timeout",
+   "fieldtype": "Int",
+   "label": "Request Timeout (seconds)",
+   "default": "10"
+  },
+  {
+   "fieldname": "test_connection",
+   "fieldtype": "Button",
+   "label": "Test Connection"
+  },
+  {
+   "fieldname": "connection_status",
+   "fieldtype": "Data",
+   "label": "Last Connection Result",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_checked",
+   "fieldtype": "Datetime",
+   "label": "Last Checked",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_provider",
+   "fieldtype": "Section Break",
+   "label": "API access for the website",
+   "depends_on": "eval:doc.deployment_mode=='ERP server (website hosted separately)'"
+  },
+  {
+   "fieldname": "provider_help",
+   "fieldtype": "HTML",
+   "label": "API Access Help",
+   "options": "<p class='text-muted'>The website server signs in to this ERP with a standard API key. Create the integration user here, then copy its API Key and API Secret into Integration Settings on the website server. The user has one role, <b>PCPB Website Integration</b>, which gives it nothing beyond the public register, service and vacancy data.</p>"
+  },
+  {
+   "fieldname": "integration_user",
+   "fieldtype": "Link",
+   "label": "Integration User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "create_api_user",
+   "fieldtype": "Button",
+   "label": "Create Integration User and API Keys"
+  },
+  {
+   "fieldname": "sb_portals",
+   "fieldtype": "Section Break",
+   "label": "Portals"
+  },
+  {
+   "fieldname": "portal_help",
+   "fieldtype": "HTML",
+   "label": "Portals Help",
+   "options": "<p class='text-muted'>Each portal the public is sent to. Leave the address empty when a portal is on the ERP site (or on this site when everything is on one server). Sign in, Create an account and Apply use the portal whose audience is <b>Customers and applicants</b>. Tender pages offer the <b>Suppliers</b> portal.</p>"
+  },
+  {
+   "fieldname": "portals",
+   "fieldtype": "Table",
+   "label": "Portals",
+   "options": "PCPB Portal"
+  }
+ ],
+ "field_order": [
+  "sb_deploy",
+  "deployment_mode",
+  "cb_deploy",
+  "deploy_help",
+  "sb_api",
+  "erp_url",
+  "api_key",
+  "api_secret",
+  "cb_api",
+  "cache_seconds",
+  "request_timeout",
+  "test_connection",
+  "connection_status",
+  "last_checked",
+  "sb_provider",
+  "provider_help",
+  "integration_user",
+  "create_api_user",
+  "sb_portals",
+  "portal_help",
+  "portals"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-14 09:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "share": 1
+  }
+ ],
+ "issingle": 1
+}

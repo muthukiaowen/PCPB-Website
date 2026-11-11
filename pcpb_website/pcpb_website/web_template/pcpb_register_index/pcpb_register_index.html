@@ -1,0 +1,7 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if false %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  {% set groups = register_groups(group) %}
+  {% for g in groups %}{% if g.title and groups | length > 1 %}<h3 style="margin-top:1.2em">{{ g.title }}</h3>{% if g.text %}<p class="pc-muted">{{ g.text }}</p>{% endif %}{% endif %}
+  <div class="pc-grid" style="--cols:{{ columns or 3 }};margin-bottom:18px">{% for r in g['items'] %}<a class="pc-card" href="{{ r.url }}">
+    <span class="pc-card-ic">{{ icon(r.icon) }}</span><h3>{{ r.title }}</h3>{% if r.text %}<p>{{ r.text }}</p>{% endif %}
+    <span class="pc-more">{% if show_counts %}{% set n = register_count(r.slug) %}{% if n is not none %}<span class="pc-tag {{ {'Banned': 'bad', 'Withdrawn': 'warn', 'Restricted': 'warn'}.get(r.kind, 'ok') }}">{{ n }} {{ tr('records') }}</span>{% endif %}{% endif %} {{ tr('open_register') }} {{ icon('arrow') }}</span></a>{% endfor %}</div>{% endfor %}
+  {% if not groups %}<div class="pc-empty">{{ tr('registers_empty') }}</div>{% endif %}</div>

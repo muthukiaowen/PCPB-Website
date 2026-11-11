@@ -1,0 +1,4 @@
+<div class="pc-pagehead{{ ' has-img' if image }}"{% if image %} style="--pc-img:url('{{ image }}')"{% endif %}><div class="pc-wrap">
+  {% if show_crumbs %}<nav class="pc-crumbs" aria-label="Breadcrumb"><a href="{{ lurl('/') }}">{{ tr('home') }}</a><span>&rsaquo;</span><span>{{ title or '' }}</span></nav>{% endif %}
+  <h1>{{ title or '' }}</h1>{% if text %}<p class="pc-lead">{{ text }}</p>{% endif %}
+</div></div>

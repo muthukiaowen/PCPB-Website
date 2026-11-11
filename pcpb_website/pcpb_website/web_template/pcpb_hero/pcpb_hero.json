@@ -1,0 +1,101 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "eyebrow",
+   "fieldtype": "Data",
+   "label": "Small line above the heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Small Text",
+   "label": "Text",
+   "reqd": 0
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Background picture (optional)",
+   "reqd": 0
+  },
+  {
+   "fieldname": "button_1_label",
+   "fieldtype": "Data",
+   "label": "First button label",
+   "reqd": 0
+  },
+  {
+   "fieldname": "button_1_url",
+   "fieldtype": "Data",
+   "label": "First button address",
+   "reqd": 0
+  },
+  {
+   "fieldname": "button_2_label",
+   "fieldtype": "Data",
+   "label": "Second button label",
+   "reqd": 0
+  },
+  {
+   "fieldname": "button_2_url",
+   "fieldtype": "Data",
+   "label": "Second button address",
+   "reqd": 0
+  },
+  {
+   "fieldname": "sb_check",
+   "fieldtype": "Section Break",
+   "label": "Status check box",
+   "reqd": 0
+  },
+  {
+   "fieldname": "show_check",
+   "fieldtype": "Check",
+   "label": "Show the product status check",
+   "reqd": 0,
+   "default": "1"
+  },
+  {
+   "fieldname": "check_title",
+   "fieldtype": "Data",
+   "label": "Box heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "check_text",
+   "fieldtype": "Small Text",
+   "label": "Box text",
+   "reqd": 0
+  },
+  {
+   "fieldname": "check_placeholder",
+   "fieldtype": "Data",
+   "label": "Search box hint",
+   "reqd": 0
+  },
+  {
+   "fieldname": "check_chips",
+   "fieldtype": "Small Text",
+   "label": "Example searches (one per line)",
+   "reqd": 0
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 12:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Hero",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

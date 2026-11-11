@@ -1,0 +1,21 @@
+{
+ "action": "Update Settings",
+ "action_label": "Open Integration Settings",
+ "creation": "2026-11-15 09:00:00",
+ "description": "Choose how the website and the ERP are hosted. On a website server enter the ERP address and the API key of the integration user, then run Test Connection. List the customer and supplier portals with their addresses. See [Hosting](/website-guide).",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 2,
+ "is_complete": 0,
+ "is_single": 1,
+ "is_skipped": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "name": "PCPB Website Integration",
+ "owner": "Administrator",
+ "show_form_tour": 0,
+ "show_full_form": 1,
+ "title": "Set the deployment mode and the portals",
+ "validate_action": 0,
+ "reference_document": "PCPB Website Integration"
+}

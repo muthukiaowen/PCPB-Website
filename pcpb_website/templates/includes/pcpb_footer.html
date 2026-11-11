@@ -1,0 +1,22 @@
+{% set s = site() %}{% set cols = footer_columns() %}
+{% set grouped = cols | selectattr('children') | list %}{% set loose = cols | rejectattr('children') | list %}
+<footer class="pc-ft"><div class="pc-wrap pc-fgrid" style="--fcols:{{ (grouped | length) + (1 if loose else 0) or 1 }}">
+  <div>{% if s.footer_logo %}<img class="pc-ft-logo" src="{{ s.footer_logo }}" alt="{{ s.logo_alt or '' }}">{% endif %}<h2 translate="no">{{ s.site_name }}</h2>
+    {% if s.footer %}<p>{{ s.footer }}</p>{% endif %}
+    <div class="pc-social">{% for k, label in (('social_x', 'X'), ('social_facebook', 'Facebook'), ('social_linkedin', 'LinkedIn'), ('social_youtube', 'YouTube')) %}{% if s.get(k) %}<a href="{{ s.get(k) }}" rel="noopener" target="_blank">{{ label }}</a>{% endif %}{% endfor %}</div></div>
+  {% for g in grouped %}<div><h3>{{ g.label }}</h3><ul>{% for c in g.children %}<li><a href="{{ c.route }}">{{ c.label }}</a></li>{% endfor %}</ul></div>{% endfor %}
+  {% if loose %}<div><h3>{{ tr('quick_links') }}</h3><ul>{% for c in loose %}<li><a href="{{ c.route }}">{{ c.label }}</a></li>{% endfor %}</ul></div>{% endif %}
+  <div><h3>{{ tr('contact_us') }}</h3><ul>
+    {% if s.address %}<li>{{ icon('pin') }} {{ s.address | e | replace('\n', '<br>') | safe }}</li>{% endif %}
+    {% if s.phone %}<li>{{ icon('phone') }} {{ s.phone }}</li>{% endif %}
+    {% if s.email %}<li>{{ icon('mail') }} <a href="mailto:{{ s.email }}">{{ s.email }}</a></li>{% endif %}
+    {% if s.hours %}<li>{{ icon('clock') }} {{ s.hours }}</li>{% endif %}</ul></div>
+</div>
+<div class="pc-wrap pc-fbase"><span>&copy; {{ frappe.utils.nowdate()[:4] }} {{ s.site_name }}. {{ tr('rights') }}</span><span>{{ s.footer_note }}</span></div></footer>
+<div id="google_translate_element" hidden></div>
+<div id="google_translate_element" hidden></div>
+<button type="button" class="pc-totop" data-pc-top aria-label="{{ tr('back_to_top') }}">{{ icon('up') }}</button>
+<dialog id="pc-leave" class="pc-dialog" aria-labelledby="pc-leave-t" data-t-ext="{{ tr('leaving_ext_title') }}" data-t-portal="{{ tr('leaving_portal_title') }}" data-t-body="{{ tr('leaving_ext_body') }}">
+  <h2 id="pc-leave-t"></h2><p id="pc-leave-b"></p><p class="pc-fine">{{ tr('leaving_note') }}</p>
+  <div class="pc-btn-row"><button type="button" class="pc-btn" data-pc-stay>{{ tr('stay') }}</button><a class="pc-btn primary" id="pc-leave-go" href="#">{{ tr('continue') }}</a></div>
+</dialog>

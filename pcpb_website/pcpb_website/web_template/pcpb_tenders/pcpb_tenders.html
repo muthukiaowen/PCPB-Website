@@ -1,0 +1,8 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if view_all_url %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  {% set rows = tenders(group or 'Open', limit or 20) %}
+  <div class="pc-list">{% for t in rows %}<div class="pc-row"><div>
+    <small><span class="pc-tag {{ {'Open': 'ok', 'Awarded': 'info', 'Cancelled': 'bad'}.get(t.status, '') }}">{{ t.status_label }}</span> {{ t.tender_no or '' }}{% if t.category %} &middot; {{ t.category }}{% endif %}</small>
+    <h3><a href="{{ t.url }}" style="text-decoration:none;color:inherit">{{ t.title }}</a></h3>{% if t.summary %}<p>{{ t.summary }}</p>{% endif %}
+    {% if t.closing_text %}<p><strong>{{ tr('tender_closes') }}:</strong> {{ t.closing_text }}</p>{% endif %}</div>
+    <a class="pc-btn sm" href="{{ t.url }}">{{ tr('tender_view') }}</a></div>{% endfor %}</div>
+  {% if not rows %}<div class="pc-empty">{{ tr('tender_none') }}</div>{% endif %}</div>

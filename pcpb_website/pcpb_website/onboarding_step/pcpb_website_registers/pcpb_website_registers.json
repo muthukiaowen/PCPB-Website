@@ -1,0 +1,21 @@
+{
+ "action": "Go to Page",
+ "action_label": "Open Registers",
+ "creation": "2026-11-15 09:00:00",
+ "description": "A register exposes one ERP record type to the public: you set the filter that decides which records are public and tick the fields that may be shown. A register can have its own address (for example /memos) and a Publish on Website tick on the source record.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 8,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "name": "PCPB Website Registers",
+ "owner": "Administrator",
+ "show_form_tour": 0,
+ "show_full_form": 1,
+ "title": "Publish registers and other ERP records",
+ "validate_action": 0,
+ "path": "pcpb-register"
+}

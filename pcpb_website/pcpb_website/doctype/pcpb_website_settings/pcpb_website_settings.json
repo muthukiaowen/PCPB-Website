@@ -1,0 +1,493 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Website Settings",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "tab_identity",
+   "fieldtype": "Tab Break",
+   "label": "Identity"
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "Organisation Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tagline",
+   "fieldtype": "Data",
+   "label": "Tagline"
+  },
+  {
+   "fieldname": "parent_body",
+   "fieldtype": "Data",
+   "label": "Parent Ministry or Department",
+   "description": "Shown in small print under the name in the header"
+  },
+  {
+   "fieldname": "cb_id",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo",
+   "description": "Shown in the header on every page. A square or wide PNG or SVG with a transparent background works best."
+  },
+  {
+   "fieldname": "logo_alt",
+   "fieldtype": "Data",
+   "label": "Logo Description",
+   "description": "Read out by screen readers, for example: Pest Control Products Board logo"
+  },
+  {
+   "fieldname": "logo_on_desk",
+   "fieldtype": "Check",
+   "label": "Use this logo in the Desk as well",
+   "default": "1",
+   "description": "The PCPB Website icon on the Desk home screen, and the logo at the top of the Desk and on the sign-in page, follow the logo above. A Desk logo that somebody chose separately in Navbar Settings is left alone."
+  },
+  {
+   "fieldname": "desk_logo_set",
+   "fieldtype": "Data",
+   "label": "Desk Logo Set By Website",
+   "hidden": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "footer_logo",
+   "fieldtype": "Attach Image",
+   "label": "Footer Logo (optional)",
+   "description": "A light version for the dark footer. Leave empty to show the name only."
+  },
+  {
+   "fieldname": "identity_help",
+   "fieldtype": "HTML",
+   "label": "Identity Help",
+   "options": "<p class='text-muted'>The browser tab icon is set in <a href='/desk/website-settings'>Website Settings &gt; Favicon</a>, or from the website builder under Logo and name.</p>"
+  },
+  {
+   "fieldname": "tab_theme",
+   "fieldtype": "Tab Break",
+   "label": "Theme"
+  },
+  {
+   "fieldname": "color_primary",
+   "fieldtype": "Color",
+   "label": "Main Colour"
+  },
+  {
+   "fieldname": "color_dark",
+   "fieldtype": "Color",
+   "label": "Dark Colour (headers, footer)"
+  },
+  {
+   "fieldname": "color_accent",
+   "fieldtype": "Color",
+   "label": "Accent Colour (buttons, highlights)"
+  },
+  {
+   "fieldname": "color_soft",
+   "fieldtype": "Color",
+   "label": "Soft Tint (panels)"
+  },
+  {
+   "fieldname": "cb_theme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "color_bg",
+   "fieldtype": "Color",
+   "label": "Page Background"
+  },
+  {
+   "fieldname": "color_text",
+   "fieldtype": "Color",
+   "label": "Text Colour"
+  },
+  {
+   "fieldname": "font_body",
+   "fieldtype": "Select",
+   "label": "Body Font",
+   "options": "Inter\nSystem\nArial\nGeorgia\nVerdana",
+   "default": "Inter"
+  },
+  {
+   "fieldname": "font_heading",
+   "fieldtype": "Select",
+   "label": "Heading Font",
+   "options": "Serif\nSame as body\nGeorgia",
+   "default": "Serif"
+  },
+  {
+   "fieldname": "sb_theme2",
+   "fieldtype": "Section Break",
+   "label": "Shape and layout"
+  },
+  {
+   "fieldname": "radius",
+   "fieldtype": "Int",
+   "label": "Corner Roundness (px)",
+   "default": "14"
+  },
+  {
+   "fieldname": "page_width",
+   "fieldtype": "Int",
+   "label": "Page Width (px)",
+   "default": "1220"
+  },
+  {
+   "fieldname": "cb_theme2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "show_flag_bar",
+   "fieldtype": "Check",
+   "label": "Show the national colours strip",
+   "default": "1"
+  },
+  {
+   "fieldname": "allow_dark_mode",
+   "fieldtype": "Check",
+   "label": "Offer a dark mode button",
+   "default": "1"
+  },
+  {
+   "fieldname": "allow_text_size",
+   "fieldtype": "Check",
+   "label": "Offer text size buttons",
+   "default": "1"
+  },
+  {
+   "fieldname": "sb_theme3",
+   "fieldtype": "Section Break",
+   "label": "Extra CSS (ICT only)",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "custom_css",
+   "fieldtype": "Code",
+   "label": "Extra CSS",
+   "options": "CSS"
+  },
+  {
+   "fieldname": "tab_header",
+   "fieldtype": "Tab Break",
+   "label": "Header"
+  },
+  {
+   "fieldname": "gov_bar",
+   "fieldtype": "Data",
+   "label": "Top Strip Text",
+   "default": "Republic of Kenya"
+  },
+  {
+   "fieldname": "show_search",
+   "fieldtype": "Check",
+   "label": "Show the search box in the header",
+   "default": "1"
+  },
+  {
+   "fieldname": "show_portal_links",
+   "fieldtype": "Check",
+   "label": "Show Sign in and Create account",
+   "default": "1"
+  },
+  {
+   "fieldname": "sb_translate",
+   "fieldtype": "Section Break",
+   "label": "Translation"
+  },
+  {
+   "fieldname": "show_translate",
+   "fieldtype": "Check",
+   "label": "Show the Translate button",
+   "default": "1",
+   "description": "Visitors choose a language and Google Translate translates the page for them. The English text stays the official version."
+  },
+  {
+   "fieldname": "translate_languages",
+   "fieldtype": "Small Text",
+   "label": "Languages Offered",
+   "description": "One per line, as code:Name. Codes are Google Translate language codes.",
+   "default": "sw:Kiswahili\nfr:French\nar:Arabic\nso:Somali"
+  },
+  {
+   "fieldname": "sb_ticker",
+   "fieldtype": "Section Break",
+   "label": "Notices ticker"
+  },
+  {
+   "fieldname": "show_ticker",
+   "fieldtype": "Check",
+   "label": "Show the notices ticker",
+   "default": "1"
+  },
+  {
+   "fieldname": "ticker_posts",
+   "fieldtype": "Int",
+   "label": "Include this many latest posts marked for the ticker",
+   "default": "5"
+  },
+  {
+   "fieldname": "ticker_items",
+   "fieldtype": "Table",
+   "label": "Fixed ticker items",
+   "options": "PCPB Ticker Item"
+  },
+  {
+   "fieldname": "tab_contact",
+   "fieldtype": "Tab Break",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "hours",
+   "fieldtype": "Data",
+   "label": "Opening Hours"
+  },
+  {
+   "fieldname": "cb_contact",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "map_lat",
+   "fieldtype": "Data",
+   "label": "Map Latitude"
+  },
+  {
+   "fieldname": "map_lng",
+   "fieldtype": "Data",
+   "label": "Map Longitude"
+  },
+  {
+   "fieldname": "map_zoom",
+   "fieldtype": "Int",
+   "label": "Map Zoom",
+   "default": "15"
+  },
+  {
+   "fieldname": "social_x",
+   "fieldtype": "Data",
+   "label": "X (Twitter) Link"
+  },
+  {
+   "fieldname": "social_facebook",
+   "fieldtype": "Data",
+   "label": "Facebook Link"
+  },
+  {
+   "fieldname": "social_linkedin",
+   "fieldtype": "Data",
+   "label": "LinkedIn Link"
+  },
+  {
+   "fieldname": "social_youtube",
+   "fieldtype": "Data",
+   "label": "YouTube Link"
+  },
+  {
+   "fieldname": "sb_offices",
+   "fieldtype": "Section Break",
+   "label": "Offices"
+  },
+  {
+   "fieldname": "offices",
+   "fieldtype": "Table",
+   "label": "Offices",
+   "options": "PCPB Office"
+  },
+  {
+   "fieldname": "tab_footer",
+   "fieldtype": "Tab Break",
+   "label": "Footer"
+  },
+  {
+   "fieldname": "footer",
+   "fieldtype": "Small Text",
+   "label": "About Text"
+  },
+  {
+   "fieldname": "footer_note",
+   "fieldtype": "Data",
+   "label": "Bottom Note"
+  },
+  {
+   "fieldname": "footer_help",
+   "fieldtype": "HTML",
+   "label": "Footer Help",
+   "options": "<p class='text-muted'>Footer link columns come from <a href='/desk/website-settings'>Website Settings &gt; Footer</a>. Items with the same Parent Label form one column.</p>"
+  },
+  {
+   "fieldname": "tab_shell",
+   "fieldtype": "Tab Break",
+   "label": "Where the design applies"
+  },
+  {
+   "fieldname": "shell_everywhere",
+   "fieldtype": "Check",
+   "label": "Use the PCPB header and footer on other website pages too (job pages, web forms)",
+   "default": "1"
+  },
+  {
+   "fieldname": "shell_exclude",
+   "fieldtype": "Small Text",
+   "label": "Never apply on addresses starting with",
+   "description": "One per line. The applicant portal and sign-in pages keep their own design. End a line with * to match everything that starts with it, for example my-*",
+   "default": "portal\nlogin\nsignup\napply\nverify\nservices\nhome\nmy-*\nme\nupdate-password\napp\ndesk\nprintview\napi"
+  },
+  {
+   "fieldname": "tab_words",
+   "fieldtype": "Tab Break",
+   "label": "Wording"
+  },
+  {
+   "fieldname": "ui_labels",
+   "fieldtype": "Table",
+   "label": "Interface Wording",
+   "options": "PCPB UI Label",
+   "description": "Every fixed word or phrase on the site (button names, messages). Change the wording here; do not change the key."
+  },
+  {
+   "fieldname": "defaults_loaded",
+   "fieldtype": "Check",
+   "label": "Defaults Loaded",
+   "hidden": 1
+  },
+  {
+   "fieldname": "builder_seeded",
+   "fieldtype": "Check",
+   "label": "Builder Seeded",
+   "hidden": 1
+  },
+  {
+   "fieldname": "defaults_applied",
+   "fieldtype": "Small Text",
+   "label": "Defaults Applied",
+   "hidden": 1
+  },
+  {
+   "fieldname": "help_seeded",
+   "fieldtype": "Small Text",
+   "label": "Help Seeded",
+   "hidden": 1
+  }
+ ],
+ "field_order": [
+  "tab_identity",
+  "site_name",
+  "tagline",
+  "parent_body",
+  "cb_id",
+  "logo",
+  "logo_alt",
+  "logo_on_desk",
+  "desk_logo_set",
+  "footer_logo",
+  "identity_help",
+  "tab_theme",
+  "color_primary",
+  "color_dark",
+  "color_accent",
+  "color_soft",
+  "cb_theme",
+  "color_bg",
+  "color_text",
+  "font_body",
+  "font_heading",
+  "sb_theme2",
+  "radius",
+  "page_width",
+  "cb_theme2",
+  "show_flag_bar",
+  "allow_dark_mode",
+  "allow_text_size",
+  "sb_theme3",
+  "custom_css",
+  "tab_header",
+  "gov_bar",
+  "show_search",
+  "show_portal_links",
+  "sb_translate",
+  "show_translate",
+  "translate_languages",
+  "sb_ticker",
+  "show_ticker",
+  "ticker_posts",
+  "ticker_items",
+  "tab_contact",
+  "address",
+  "phone",
+  "email",
+  "hours",
+  "cb_contact",
+  "map_lat",
+  "map_lng",
+  "map_zoom",
+  "social_x",
+  "social_facebook",
+  "social_linkedin",
+  "social_youtube",
+  "sb_offices",
+  "offices",
+  "tab_footer",
+  "footer",
+  "footer_note",
+  "footer_help",
+  "tab_shell",
+  "shell_everywhere",
+  "shell_exclude",
+  "tab_words",
+  "ui_labels",
+  "defaults_loaded",
+  "builder_seeded",
+  "defaults_applied",
+  "help_seeded"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "share": 1
+  }
+ ],
+ "issingle": 1
+}

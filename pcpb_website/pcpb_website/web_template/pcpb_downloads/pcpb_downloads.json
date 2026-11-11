@@ -1,0 +1,62 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "subtitle",
+   "fieldtype": "Small Text",
+   "label": "Text under the heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "view_all_label",
+   "fieldtype": "Data",
+   "label": "Link label (e.g. View all)",
+   "reqd": 0
+  },
+  {
+   "fieldname": "view_all_url",
+   "fieldtype": "Data",
+   "label": "Link address",
+   "reqd": 0
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "reqd": 0,
+   "options": "All\nActs and Regulations\nForms\nApplication Forms\nGuidelines\nNotices\nTenders\nReports\nRegisters\nPublications\nApproved Labels\nPublic Awareness\nCitizen Service Charter\nInstitutional Documents\nStrategic Plans\nOther",
+   "default": "All"
+  },
+  {
+   "fieldname": "limit",
+   "fieldtype": "Int",
+   "label": "How many",
+   "reqd": 0,
+   "default": "50"
+  },
+  {
+   "fieldname": "group_by",
+   "fieldtype": "Check",
+   "label": "Group by category",
+   "reqd": 0,
+   "default": "1"
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 12:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Downloads",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

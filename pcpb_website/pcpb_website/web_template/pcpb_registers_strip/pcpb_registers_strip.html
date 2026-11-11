@@ -1,0 +1,3 @@
+<div class="pc-wrap pc-pad">{% if title %}<div class="pc-head"><h2>{{ title }}</h2></div>{% endif %}
+  {% set regs = registers() %}{% if regs %}<div class="pc-marquee"><div>{% for pass in (1, 2) %}{% for r in regs %}<a class="pc-mq" href="{{ r.url }}"{% if pass == 2 %} aria-hidden="true" tabindex="-1"{% endif %}>{{ icon(r.icon) }} {{ r.title }}{% set n = register_count(r.slug) %}{% if n is not none %} <b>{{ n }}</b>{% endif %}</a>{% endfor %}{% endfor %}</div></div>
+  {% else %}<div class="pc-empty">{{ tr('registers_empty') }}</div>{% endif %}</div>

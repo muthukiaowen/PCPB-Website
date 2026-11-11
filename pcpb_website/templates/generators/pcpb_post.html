@@ -1,0 +1,15 @@
+{% extends "templates/pcpb_page.html" %}
+{% block page_content %}
+<section class="pc-pagehead{{ ' has-img' if doc.hero_image }}"{% if doc.hero_image %} style="--pc-img:url('{{ doc.hero_image }}')"{% endif %}><div class="pc-wrap">
+  <nav class="pc-crumbs" aria-label="Breadcrumb"><a href="{{ lurl('/') }}">{{ tr('home') }}</a><span>&rsaquo;</span><a href="{{ lurl('/news') }}">{{ tr('news_title') }}</a></nav>
+  <h1>{{ page_title }}</h1>
+  <p class="pc-lead"><span class="pc-tag info">{{ type_label }}</span> {{ frappe.utils.formatdate(doc.publish_date, "d MMM yyyy") if doc.publish_date else '' }}</p></div></section>
+<section class="pc-sec"><div class="pc-wrap pc-pad pc-narrow">
+  {% if summary %}<p style="font-size:1.1rem" class="pc-muted">{{ summary }}</p>{% endif %}
+  <div class="pc-prose">{{ body or '' }}</div>
+  {% set files = doc.files | selectattr('file') | list %}
+  {% if files %}<h2 style="font-size:1.3rem;margin-top:1.2em">{{ tr('downloads') }}</h2><div class="pc-list">{% for f in files %}
+    <a class="pc-file" href="{{ f.file }}" target="_blank" rel="noopener"><b>{{ (f.file.rsplit('.', 1)[-1] | upper)[:4] }}</b><span>{{ f.label or f.file.rsplit('/', 1)[-1] }}</span>{{ icon('download') }}</a>{% endfor %}</div>{% endif %}
+  <div class="pc-btn-row"><a class="pc-btn" href="{{ lurl('/news') }}">&larr; {{ tr('news_title') }}</a></div>
+</div></section>
+{% endblock %}

@@ -1,0 +1,2 @@
+<div class="pc-wrap pc-pad"><div class="pc-cta {{ (style or 'Green') | lower }}"><div><h2>{{ title or '' }}</h2>{% if text %}<p>{{ text }}</p>{% endif %}</div>
+  {% if button_label %}<a class="pc-btn {{ 'primary' if style in ('Gold', 'Light') else 'gold' }}" href="{{ lurl(button_url) }}">{{ button_label }} {{ icon('arrow') }}</a>{% endif %}</div></div>

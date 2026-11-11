@@ -1,0 +1,3 @@
+{# expects `s` (a service from services()) #}
+{% if s.action.none %}<span class="pc-fine">{{ tr('info_only') if s.method == 'Information only' else tr('no_apply') }}</span>
+{% else %}<a class="pc-btn primary sm" href="{{ s.action.href }}" data-pc-leave="1" data-ext="{{ 1 if s.action.external else 0 }}" data-sys="{{ s.action.system }}" data-svc="{{ s.name }}">{{ tr('apply_now') }}</a>{% endif %}

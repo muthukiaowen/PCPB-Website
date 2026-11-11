@@ -1,0 +1,225 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Register",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "slug",
+   "fieldtype": "Data",
+   "label": "Address",
+   "reqd": 1,
+   "unique": 1,
+   "description": "Lower case, no spaces. The register opens at /registers/<address>"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Own Address (optional)",
+   "unique": 1,
+   "description": "Gives the register an address of its own, for example memos opens it at /memos and each record at /memos/<record>. Leave empty to use /registers/<address>."
+  },
+  {
+   "fieldname": "register_group",
+   "fieldtype": "Link",
+   "label": "Register Group",
+   "options": "PCPB Register Group",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display Order",
+   "default": "10"
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Select",
+   "label": "Icon",
+   "options": "leaf\nsprout\nshield\nflask\nalert\nclock\ngrid\nlimit\nban\ndoc\nbuilding\nsearch\nusers\nbriefcase",
+   "default": "leaf"
+  },
+  {
+   "fieldname": "status_kind",
+   "fieldtype": "Select",
+   "label": "Kind",
+   "options": "Standard\nRestricted\nWithdrawn\nBanned\nDocuments",
+   "default": "Standard",
+   "description": "Restricted, Withdrawn and Banned registers are used by the product status check to warn the public"
+  },
+  {
+   "fieldname": "sb_text",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "sb_src",
+   "fieldtype": "Section Break",
+   "label": "Where the data comes from"
+  },
+  {
+   "fieldname": "source_doctype",
+   "fieldtype": "Link",
+   "label": "Records Of",
+   "options": "DocType",
+   "reqd": 1,
+   "description": "The ERP record type this register reads live, e.g. Product or Premises"
+  },
+  {
+   "fieldname": "public_filter",
+   "fieldtype": "Code",
+   "label": "Which Records Are Public",
+   "options": "JSON",
+   "description": "Nothing is shown until this is set. Example: {\"status\": \"Registered\"}. Use \"__today__\" for today's date, e.g. {\"valid_to\": [\">=\", \"__today__\"]}"
+  },
+  {
+   "fieldname": "add_publish_tick",
+   "fieldtype": "Button",
+   "label": "Add a Publish on Website tick to this record type",
+   "description": "Adds a standard Custom Field (a tick box named Publish on Website) to the record type and makes it the rule above. Staff then publish a record to the website by ticking it on the ERP record."
+  },
+  {
+   "fieldname": "cb_src",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "title_field",
+   "fieldtype": "Data",
+   "label": "Record Title Field",
+   "description": "The field shown as the heading of a record page"
+  },
+  {
+   "fieldname": "ingredient_field",
+   "fieldtype": "Data",
+   "label": "Active Ingredient Field",
+   "description": "Used by the product status check to match restricted, withdrawn and banned lists"
+  },
+  {
+   "fieldname": "sort_field",
+   "fieldtype": "Data",
+   "label": "Sort By Field"
+  },
+  {
+   "fieldname": "sort_dir",
+   "fieldtype": "Select",
+   "label": "Sort Direction",
+   "options": "asc\ndesc",
+   "default": "asc"
+  },
+  {
+   "fieldname": "page_length",
+   "fieldtype": "Int",
+   "label": "Rows Per Page",
+   "default": "25"
+  },
+  {
+   "fieldname": "allow_export",
+   "fieldtype": "Check",
+   "label": "Allow the public to download the list (CSV)",
+   "default": "1"
+  },
+  {
+   "fieldname": "sb_fields",
+   "fieldtype": "Section Break",
+   "label": "Fields shown to the public"
+  },
+  {
+   "fieldname": "load_fields",
+   "fieldtype": "Button",
+   "label": "List all fields of the record type"
+  },
+  {
+   "fieldname": "fields",
+   "fieldtype": "Table",
+   "label": "Fields",
+   "options": "PCPB Register Field"
+  }
+ ],
+ "field_order": [
+  "title",
+  "slug",
+  "route",
+  "register_group",
+  "cb1",
+  "published",
+  "display_order",
+  "icon",
+  "status_kind",
+  "sb_text",
+  "description",
+  "sb_src",
+  "source_doctype",
+  "public_filter",
+  "add_publish_tick",
+  "cb_src",
+  "title_field",
+  "ingredient_field",
+  "sort_field",
+  "sort_dir",
+  "page_length",
+  "allow_export",
+  "sb_fields",
+  "load_fields",
+  "fields"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  }
+ ],
+ "autoname": "field:slug",
+ "naming_rule": "By fieldname",
+ "title_field": "title",
+ "show_title_field_in_link": 1
+}

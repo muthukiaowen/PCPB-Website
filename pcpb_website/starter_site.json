@@ -1,0 +1,591 @@
+{
+ "pages": [
+  {
+   "route": "site",
+   "title": "Home",
+   "description": "The Pest Control Products Board regulates pest control products in Kenya. Search registered products and licensed premises, and apply for services online.",
+   "blocks": [
+    {
+     "web_template": "PCPB Hero",
+     "values": {
+      "eyebrow": "Statutory regulator of pest control products",
+      "title": "Safe, effective pest control products for Kenya's farms, homes and environment",
+      "text": "The Pest Control Products Board regulates the manufacture, import, distribution, use and disposal of pest control products under the Pest Control Products Act, Cap. 346.",
+      "button_1_label": "Browse the registers",
+      "button_1_url": "/registers",
+      "button_2_label": "Apply for a service",
+      "button_2_url": "/online-services",
+      "show_check": 1,
+      "check_title": "Product status check",
+      "check_text": "Search a product name, active ingredient or registration number across every public register.",
+      "check_placeholder": "Product, ingredient or registration no.",
+      "check_chips": ""
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Cards",
+     "values": {
+      "title": "What would you like to do?",
+      "columns": "3",
+      "cards": [
+       {
+        "icon": "form",
+        "title": "Apply for a service",
+        "text": "Start an application on the PCPB portal.",
+        "url": "/online-services"
+       },
+       {
+        "icon": "leaf",
+        "title": "Search registered products",
+        "text": "Check that a product is approved for use in Kenya.",
+        "url": "/registers"
+       },
+       {
+        "icon": "building",
+        "title": "Find licensed premises",
+        "text": "Premises inspected and licensed by PCPB.",
+        "url": "/registers"
+       },
+       {
+        "icon": "megaphone",
+        "title": "Latest notices",
+        "text": "Notices, circulars and safety alerts.",
+        "url": "/news"
+       },
+       {
+        "icon": "gavel",
+        "title": "Tenders",
+        "text": "Open and past tenders of the Board.",
+        "url": "/tenders"
+       },
+       {
+        "icon": "download",
+        "title": "Forms and guidelines",
+        "text": "Application forms, guidelines and the service charter.",
+        "url": "/downloads"
+       }
+      ]
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Registers Strip",
+     "values": {
+      "title": "Registers at a glance"
+     },
+     "shade": 1
+    },
+    {
+     "web_template": "PCPB Services",
+     "values": {
+      "title": "Featured services",
+      "view_all_label": "All services",
+      "view_all_url": "/online-services",
+      "mode": "Featured",
+      "limit": 6
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB News",
+     "values": {
+      "title": "Latest updates",
+      "view_all_label": "All news and notices",
+      "view_all_url": "/news",
+      "types": "All",
+      "limit": 3,
+      "layout": "Cards"
+     },
+     "shade": 1
+    },
+    {
+     "web_template": "PCPB Tenders",
+     "values": {
+      "title": "Open tenders",
+      "view_all_label": "All tenders",
+      "view_all_url": "/tenders",
+      "group": "Open",
+      "limit": 3
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Call to Action",
+     "values": {
+      "title": "Seen a suspect or illegal product?",
+      "text": "Report unregistered, counterfeit or wrongly labelled pest control products to the Board.",
+      "button_label": "Contact the Board",
+      "button_url": "/contact-us",
+      "style": "Green"
+     },
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "about-us",
+   "title": "About us",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "About the Board",
+      "text": "Who we are, our mandate and our commitments.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Text",
+     "values": {
+      "content": "<p>The Pest Control Products Board (PCPB) is a statutory body established under the Pest Control Products Act, Cap 346 of the Laws of Kenya. The Board regulates the manufacture, import, export, distribution, sale, use and disposal of pest control products.</p>\n<h3>Vision</h3><p>To be a world class regulatory agency for pest control products.</p>\n<h3>Mission</h3><p>To regulate pest control products so that they are safe, effective and of good quality, protecting human health, animals and the environment.</p>\n<h3>Core values</h3><ul><li>Customer focus</li><li>Professionalism</li><li>Integrity</li><li>Confidentiality</li><li>Equity and equality</li><li>Teamwork</li><li>Innovation</li></ul>"
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Leadership",
+     "values": {
+      "title": "Leadership",
+      "groups": "All",
+      "feature_first": 0
+     },
+     "shade": 1
+    }
+   ]
+  },
+  {
+   "route": "leadership",
+   "title": "Leadership",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Leadership",
+      "text": "The Board and the management of the Pest Control Products Board.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Leadership",
+     "values": {
+      "title": "Board Chairperson",
+      "groups": "Board Chairperson",
+      "feature_first": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Leadership",
+     "values": {
+      "title": "Chief Executive Officer",
+      "groups": "Chief Executive Officer",
+      "feature_first": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Leadership",
+     "values": {
+      "title": "Board members",
+      "groups": "Board Member"
+     },
+     "shade": 1
+    },
+    {
+     "web_template": "PCPB Leadership",
+     "values": {
+      "title": "Executive management",
+      "groups": "Executive Management"
+     },
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "online-services",
+   "title": "Services",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Online services",
+      "text": "Applications are made on the PCPB portal. Sign in or create an account to apply.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Services",
+     "values": {
+      "mode": "All",
+      "group_by": 1
+     },
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "registers",
+   "title": "Registers",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Public registers",
+      "text": "Every list here is read live from the Board's records.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Register Search",
+     "values": {
+      "title": "Search every register",
+      "subtitle": "By product name, active ingredient, registration number or premises.",
+      "placeholder": "Search the registers"
+     },
+     "shade": 1
+    },
+    {
+     "web_template": "PCPB Register Index",
+     "values": {
+      "show_counts": 1,
+      "columns": "3"
+     },
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "news",
+   "title": "News and notices",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "News and notices",
+      "text": "News, public notices, circulars and safety alerts from the Board.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB News",
+     "values": {
+      "types": "All",
+      "limit": 30,
+      "layout": "List"
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB News",
+     "values": {
+      "title": "Archive",
+      "types": "All",
+      "limit": 50,
+      "layout": "List",
+      "archive": 1
+     },
+     "shade": 1
+    }
+   ]
+  },
+  {
+   "route": "tenders",
+   "title": "Tenders",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Tenders",
+      "text": "Current and past tenders of the Pest Control Products Board.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Tenders",
+     "values": {
+      "title": "Open tenders",
+      "group": "Open",
+      "limit": 50
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Tenders",
+     "values": {
+      "title": "Closed and awarded",
+      "group": "Archive",
+      "limit": 50
+     },
+     "shade": 1
+    }
+   ]
+  },
+  {
+   "route": "careers",
+   "title": "Careers",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Careers",
+      "text": "Open vacancies at the Board. Vacancies are published by Human Resources and appear here by themselves.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Jobs",
+     "values": {
+      "limit": 50
+     },
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "downloads",
+   "title": "Downloads",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Downloads",
+      "text": "Forms, guidelines, regulations, reports and other documents.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Downloads",
+     "values": {
+      "category": "All",
+      "limit": 200,
+      "group_by": 1
+     },
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "gallery",
+   "title": "Gallery",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Gallery",
+      "text": "Pictures from the Board's work across the country.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Gallery",
+     "values": {},
+     "shade": 0
+    }
+   ]
+  },
+  {
+   "route": "contact-us",
+   "title": "Contact and location",
+   "blocks": [
+    {
+     "web_template": "PCPB Page Header",
+     "values": {
+      "title": "Contact and location",
+      "text": "Reach the head office or the regional office nearest to you.",
+      "show_crumbs": 1
+     },
+     "shade": 0
+    },
+    {
+     "web_template": "PCPB Contact and Map",
+     "values": {
+      "show_map": 1,
+      "show_offices": 1,
+      "button_label": "Send us a message",
+      "button_url": "/contact"
+     },
+     "shade": 0
+    }
+   ]
+  }
+ ],
+ "menu": [
+  [
+   "Home",
+   "/",
+   ""
+  ],
+  [
+   "About",
+   "",
+   ""
+  ],
+  [
+   "About us",
+   "/about-us",
+   "About"
+  ],
+  [
+   "Leadership",
+   "/leadership",
+   "About"
+  ],
+  [
+   "Gallery",
+   "/gallery",
+   "About"
+  ],
+  [
+   "Careers",
+   "/careers",
+   "About"
+  ],
+  [
+   "Services",
+   "/online-services",
+   ""
+  ],
+  [
+   "Registers",
+   "/registers",
+   ""
+  ],
+  [
+   "News",
+   "/news",
+   ""
+  ],
+  [
+   "Tenders",
+   "/tenders",
+   ""
+  ],
+  [
+   "Downloads",
+   "/downloads",
+   ""
+  ],
+  [
+   "Contact",
+   "/contact-us",
+   ""
+  ]
+ ],
+ "footer": [
+  [
+   "The Board",
+   "",
+   ""
+  ],
+  [
+   "About us",
+   "/about-us",
+   "The Board"
+  ],
+  [
+   "Leadership",
+   "/leadership",
+   "The Board"
+  ],
+  [
+   "Careers",
+   "/careers",
+   "The Board"
+  ],
+  [
+   "Tenders",
+   "/tenders",
+   "The Board"
+  ],
+  [
+   "Contact and location",
+   "/contact-us",
+   "The Board"
+  ],
+  [
+   "Find",
+   "",
+   ""
+  ],
+  [
+   "Registers",
+   "/registers",
+   "Find"
+  ],
+  [
+   "Online services",
+   "/online-services",
+   "Find"
+  ],
+  [
+   "News and notices",
+   "/news",
+   "Find"
+  ],
+  [
+   "Downloads",
+   "/downloads",
+   "Find"
+  ],
+  [
+   "Gallery",
+   "/gallery",
+   "Find"
+  ]
+ ],
+ "redirects": [
+  [
+   "about",
+   "/about-us"
+  ],
+  [
+   "jobs",
+   "/careers"
+  ],
+  [
+   "vacancies",
+   "/careers"
+  ],
+  [
+   "products",
+   "/registers/registered-products"
+  ],
+  [
+   "premises",
+   "/registers/licensed-premises"
+  ],
+  [
+   "documents",
+   "/downloads"
+  ],
+  [
+   "resources",
+   "/downloads"
+  ],
+  [
+   "contact-us/form",
+   "/contact"
+  ]
+ ],
+ "ticker": [
+  [
+   "Check first",
+   "Search every register by product, active ingredient or registration number",
+   "/registers"
+  ],
+  [
+   "Safety",
+   "Always read and follow the label before using a pest control product",
+   ""
+  ]
+ ]
+}

@@ -1,0 +1,21 @@
+{
+ "action": "Go to Page",
+ "action_label": "Open Logo and Name",
+ "creation": "2026-11-15 09:00:00",
+ "description": "The logo, organisation name, footer logo and browser tab icon are stored in PCPB Website Settings and rendered in the header and footer of every page. Use a PNG or SVG with a transparent background.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 1,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-11-15 09:00:00",
+ "modified_by": "Administrator",
+ "name": "PCPB Website Identity",
+ "owner": "Administrator",
+ "show_form_tour": 0,
+ "show_full_form": 1,
+ "title": "Upload the logo and set the organisation name",
+ "validate_action": 0,
+ "path": "/page-builder?panel=identity"
+}

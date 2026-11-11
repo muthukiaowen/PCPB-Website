@@ -1,0 +1,3 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if false %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  <div class="pc-gallery" data-pc-gallery>{% for g in images or [] %}{% if g.image %}<figure><img src="{{ g.image }}" alt="{{ g.caption or '' }}" loading="lazy">{% if g.caption %}<figcaption>{{ g.caption }}</figcaption>{% endif %}</figure>{% endif %}{% endfor %}</div>
+  {% if not images %}<div class="pc-empty">{{ tr('gallery_empty') }}</div>{% endif %}</div>

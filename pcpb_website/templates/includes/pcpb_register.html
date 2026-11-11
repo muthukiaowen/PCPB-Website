@@ -1,0 +1,14 @@
+{# expects reg_slug; optional reg_rows, reg_compact #}
+<div class="pc-register" data-pc-register="{{ reg_slug }}" data-rows="{{ reg_rows or '' }}" data-compact="{{ 1 if reg_compact else 0 }}"
+     data-l-all="{{ tr('all') }}" data-l-none="{{ tr('no_results') }}" data-l-showing="{{ tr('showing') }}" data-l-of="{{ tr('of') }}" data-l-expired="{{ tr('expired') }}">
+  <div class="pc-reg-tools">
+    <label class="pc-searchbox">{{ icon('search') }}<input type="search" class="pc-reg-q" placeholder="{{ tr('search') }}&hellip;" aria-label="{{ tr('search') }}"></label>
+    <span class="pc-reg-filters" style="display:contents"></span>
+    <button type="button" class="pc-btn sm pc-reg-clear">{{ tr('clear') }}</button>
+    <a class="pc-btn sm pc-reg-csv" hidden>{{ icon('download') }} CSV</a>
+    {% if not reg_compact %}<button type="button" class="pc-btn sm" onclick="window.print()">{{ tr('print') }}</button>{% endif %}
+  </div>
+  <div class="pc-tablewrap"><table class="pc-table"><thead></thead><tbody translate="no"><tr><td>&hellip;</td></tr></tbody></table></div>
+  <div class="pc-reg-meta"><span class="pc-reg-count"></span>
+    <span class="pc-pager" style="margin:0"><button type="button" class="pc-btn sm pc-reg-prev">&lsaquo; {{ tr('previous') }}</button><button type="button" class="pc-btn sm pc-reg-next">{{ tr('next') }} &rsaquo;</button></span></div>
+</div>

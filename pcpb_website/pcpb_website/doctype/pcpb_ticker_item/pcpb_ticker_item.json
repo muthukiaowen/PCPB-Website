@@ -1,0 +1,45 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Ticker Item",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "tag",
+   "fieldtype": "Data",
+   "label": "Tag",
+   "in_list_view": 1,
+   "columns": 2
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Data",
+   "label": "Text",
+   "in_list_view": 1,
+   "reqd": 1,
+   "columns": 5
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "Link",
+   "in_list_view": 1,
+   "columns": 3
+  }
+ ],
+ "field_order": [
+  "tag",
+  "text",
+  "url"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-12 09:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [],
+ "istable": 1,
+ "editable_grid": 1
+}

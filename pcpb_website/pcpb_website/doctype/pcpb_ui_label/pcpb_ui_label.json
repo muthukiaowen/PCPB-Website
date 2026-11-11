@@ -1,0 +1,38 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB UI Label",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "key",
+   "fieldtype": "Data",
+   "label": "Key",
+   "in_list_view": 1,
+   "reqd": 1,
+   "read_only": 0,
+   "columns": 3
+  },
+  {
+   "fieldname": "wording",
+   "fieldtype": "Small Text",
+   "label": "Wording",
+   "in_list_view": 1,
+   "columns": 7
+  }
+ ],
+ "field_order": [
+  "key",
+  "wording"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-12 09:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [],
+ "istable": 1,
+ "editable_grid": 1
+}

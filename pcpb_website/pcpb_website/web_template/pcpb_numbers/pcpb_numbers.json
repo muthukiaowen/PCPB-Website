@@ -1,0 +1,47 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "lift",
+   "fieldtype": "Check",
+   "label": "Overlap the section above",
+   "reqd": 0
+  },
+  {
+   "fieldname": "stats",
+   "fieldtype": "Table Break",
+   "label": "Figures",
+   "reqd": 0
+  },
+  {
+   "fieldname": "number",
+   "fieldtype": "Data",
+   "label": "Figure",
+   "reqd": 0
+  },
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "label": "What it counts",
+   "reqd": 0
+  },
+  {
+   "fieldname": "register",
+   "fieldtype": "Link",
+   "label": "Or count the records of this register",
+   "reqd": 0,
+   "options": "PCPB Register"
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 12:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Numbers",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

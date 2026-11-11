@@ -1,0 +1,105 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "subtitle",
+   "fieldtype": "Small Text",
+   "label": "Text under the heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "view_all_label",
+   "fieldtype": "Data",
+   "label": "Link label (e.g. View all)",
+   "reqd": 0
+  },
+  {
+   "fieldname": "view_all_url",
+   "fieldtype": "Data",
+   "label": "Link address",
+   "reqd": 0
+  },
+  {
+   "fieldname": "columns",
+   "fieldtype": "Select",
+   "label": "Cards per row",
+   "reqd": 0,
+   "options": "2\n3\n4",
+   "default": "3"
+  },
+  {
+   "fieldname": "layout",
+   "fieldtype": "Select",
+   "label": "Layout",
+   "reqd": 0,
+   "options": "Grid\nCarousel",
+   "default": "Grid"
+  },
+  {
+   "fieldname": "autoplay",
+   "fieldtype": "Check",
+   "label": "Carousel moves by itself",
+   "reqd": 0
+  },
+  {
+   "fieldname": "cards",
+   "fieldtype": "Table Break",
+   "label": "Cards",
+   "reqd": 0
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Select",
+   "label": "Icon",
+   "reqd": 0,
+   "options": "leaf\nsprout\nshield\nflask\nalert\nclock\ngrid\nlimit\nban\ndoc\nbuilding\nsearch\nusers\nbriefcase\npin\nphone\nmail\ndownload\nmegaphone\ngavel\nscale\nbook\nglobe\ncheck\nform\nimage\nstar"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Picture (instead of the icon)",
+   "reqd": 0
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Card heading",
+   "reqd": 0
+  },
+  {
+   "fieldname": "text",
+   "fieldtype": "Small Text",
+   "label": "Card text",
+   "reqd": 0
+  },
+  {
+   "fieldname": "link_label",
+   "fieldtype": "Data",
+   "label": "Link label",
+   "reqd": 0
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "Link address",
+   "reqd": 0
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 18:59:15",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Cards",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}

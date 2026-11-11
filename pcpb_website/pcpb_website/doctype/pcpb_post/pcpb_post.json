@@ -1,0 +1,200 @@
+{
+ "doctype": "DocType",
+ "name": "PCPB Post",
+ "module": "PCPB Website",
+ "custom": 0,
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Address",
+   "description": "Filled in for you from the title. Example: news/new-fee-schedule"
+  },
+  {
+   "fieldname": "post_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "News\nNotice\nCircular\nSafety Alert\nAnnouncement\nPress Release\nEvent",
+   "default": "News",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "cb0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "publish_date",
+   "fieldtype": "Date",
+   "label": "Publish Date",
+   "default": "Today",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "expires_on",
+   "fieldtype": "Date",
+   "label": "Move To Archive After"
+  },
+  {
+   "fieldname": "show_in_ticker",
+   "fieldtype": "Check",
+   "label": "Show in the notices ticker"
+  },
+  {
+   "fieldname": "sb1",
+   "fieldtype": "Section Break",
+   "label": "Content"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Small Text",
+   "label": "Summary",
+   "description": "One or two sentences shown in lists and under the title"
+  },
+  {
+   "fieldname": "body",
+   "fieldtype": "Text Editor",
+   "label": "Body"
+  },
+  {
+   "fieldname": "sb3",
+   "fieldtype": "Section Break",
+   "label": "Picture and files"
+  },
+  {
+   "fieldname": "hero_image",
+   "fieldtype": "Attach Image",
+   "label": "Picture"
+  },
+  {
+   "fieldname": "hero_alt",
+   "fieldtype": "Data",
+   "label": "Picture Description"
+  },
+  {
+   "fieldname": "files",
+   "fieldtype": "Table",
+   "label": "Files",
+   "options": "PCPB Page File"
+  },
+  {
+   "fieldname": "sb4",
+   "fieldtype": "Section Break",
+   "label": "Search engines",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "meta_description",
+   "fieldtype": "Small Text",
+   "label": "Description For Search Engines"
+  }
+ ],
+ "field_order": [
+  "title",
+  "route",
+  "post_type",
+  "cb0",
+  "published",
+  "publish_date",
+  "expires_on",
+  "show_in_ticker",
+  "sb1",
+  "summary",
+  "body",
+  "sb3",
+  "hero_image",
+  "hero_alt",
+  "files",
+  "sb4",
+  "meta_description"
+ ],
+ "creation": "2026-11-11 10:00:00",
+ "modified": "2026-11-12 09:00:00",
+ "modified_by": "Administrator",
+ "owner": "Administrator",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Content Editor",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Content Approver",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  },
+  {
+   "role": "Website Publisher",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "print": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1
+  }
+ ],
+ "autoname": "format:POST-{#####}",
+ "title_field": "title",
+ "show_title_field_in_link": 1,
+ "has_web_view": 1,
+ "allow_guest_to_view": 1,
+ "is_published_field": "published",
+ "index_web_pages_for_search": 1
+}

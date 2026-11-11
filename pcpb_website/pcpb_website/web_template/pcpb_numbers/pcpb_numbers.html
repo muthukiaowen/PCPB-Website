@@ -1,0 +1,3 @@
+<div class="pc-wrap {{ 'pc-statlift' if lift else 'pc-pad' }}"{% if lift %} style="margin-top:-34px;position:relative;z-index:2;padding-bottom:8px"{% endif %}>
+  <dl class="pc-stats" style="--cols:{{ [(stats or []) | length, 4] | min or 1 }}">{% for s in stats or [] %}{% set n = register_count(s.register) if s.register else None %}
+    <div><dt>{{ s.label or '' }}</dt><dd>{{ n if n is not none else (s.number or '') }}</dd></div>{% endfor %}</dl></div>

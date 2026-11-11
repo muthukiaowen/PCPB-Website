@@ -1,0 +1,8 @@
+<div class="pc-wrap pc-pad">{% if title or subtitle %}<div class="pc-head"><h2>{{ title or '' }}</h2>{% if view_all_url %}<a class="pc-link" href="{{ lurl(view_all_url) }}">{{ view_all_label or tr('view_all') }} {{ icon('arrow') }}</a>{% endif %}{% if subtitle %}<p>{{ subtitle }}</p>{% endif %}</div>{% endif %}
+  <div class="{{ 'pc-track' if layout == 'Carousel' else 'pc-grid' }}"{% if layout == 'Carousel' %} data-pc-carousel="{{ 5 if autoplay else 0 }}"{% endif %} style="--cols:{{ columns or 3 }}">
+  {% for c in cards or [] %}<{{ 'a href="' ~ lurl(c.url) ~ '"' if c.url else 'div' }} class="pc-card">
+    {% if c.image %}<img class="pc-card-img" src="{{ c.image }}" alt="">{% elif c.icon %}<span class="pc-card-ic">{{ icon(c.icon) }}</span>{% endif %}
+    <h3>{{ c.title or '' }}</h3>{% if c.text %}<p>{{ c.text }}</p>{% endif %}
+    {% if c.url %}<span class="pc-more">{{ c.link_label or tr('read_more') }} {{ icon('arrow') }}</span>{% endif %}
+  </{{ 'a' if c.url else 'div' }}>{% endfor %}
+  </div>{% if not cards %}<div class="pc-empty">{{ tr('cards_empty') }}</div>{% endif %}</div>

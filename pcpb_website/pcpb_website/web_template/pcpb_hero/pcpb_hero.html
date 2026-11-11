@@ -1,0 +1,13 @@
+<div class="pc-hero{{ ' has-img' if image }}"{% if image %} style="--pc-img:url('{{ image }}')"{% endif %}>
+  <div class="pc-wrap pc-hero-grid{{ '' if show_check else ' one' }}">
+    <div>{% if eyebrow %}<span class="pc-eyebrow">{{ eyebrow }}</span>{% endif %}
+      <h1>{{ title or '' }}</h1>{% if text %}<p class="pc-lead">{{ text }}</p>{% endif %}
+      <div class="pc-btn-row">{% if button_1_label %}<a class="pc-btn gold" href="{{ lurl(button_1_url) }}">{{ button_1_label }} {{ icon('arrow') }}</a>{% endif %}
+        {% if button_2_label %}<a class="pc-btn ghost" href="{{ lurl(button_2_url) }}">{{ button_2_label }}</a>{% endif %}</div></div>
+    {% if show_check %}<div class="pc-glass" data-pc-check data-none="{{ tr('check_none') }}" data-more="{{ tr('view_all') }}">
+      <h2>{{ icon('shield') }} {{ check_title or tr('status_check') }}</h2>{% if check_text %}<p>{{ check_text }}</p>{% endif %}
+      <form class="pc-searchbox" action="/search" method="get">{{ icon('search') }}<input type="search" name="q" placeholder="{{ check_placeholder or tr('search') }}" autocomplete="off" aria-label="{{ tr('search') }}"><button class="pc-btn primary sm" type="submit">{{ tr('check') }}</button></form>
+      {% if check_chips %}<div class="pc-chips">{% for c in lines(check_chips) %}<a class="pc-chip" href="/search?q={{ c | urlencode }}">{{ c }}</a>{% endfor %}</div>{% endif %}
+      <div class="pc-hits" aria-live="polite"></div></div>{% endif %}
+  </div>
+</div>

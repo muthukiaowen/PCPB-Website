@@ -1,0 +1,12 @@
+{% extends "templates/pcpb_page.html" %}
+{% block page_content %}
+<section class="pc-pagehead"><div class="pc-wrap">
+  <nav class="pc-crumbs" aria-label="Breadcrumb"><a href="{{ lurl('/') }}">{{ tr('home') }}</a><span>&rsaquo;</span><a href="{{ lurl('/registers') }}">{{ tr('registers') }}</a><span>&rsaquo;</span><span>{{ title }}</span></nav>
+  <h1>{{ title }}</h1>{% if reg_text %}<p class="pc-lead">{{ reg_text }}</p>{% endif %}</div></section>
+<section class="pc-sec"><div class="pc-wrap pc-pad">
+  {% if reg_kind in ('Restricted', 'Withdrawn', 'Banned') %}<div class="pc-note pc-{{ 'bad' if reg_kind == 'Banned' else 'warn' }}">{{ tr('kind_note_' ~ reg_kind | lower) }}</div>{% endif %}
+  {% if not reg_published %}<div class="pc-note pc-warn">{{ tr('unpublished_note') }}</div>{% endif %}
+  {% if reg_error %}<div class="pc-note pc-warn">{{ reg_error }}</div>{% else %}{% include "templates/includes/pcpb_register.html" %}{% endif %}
+  <p class="pc-fine" style="margin-top:14px">{{ tr('register_note') }}</p>
+</div></section>
+{% endblock %}

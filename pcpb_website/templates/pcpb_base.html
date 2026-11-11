@@ -1,0 +1,12 @@
+{% extends "templates/base.html" %}
+{% block title %}{% set sn = site().site_name or "" %}{% set t = (title or "") | striptags | trim %}{{ (t ~ " | " ~ sn) if t and t not in (sn, "Home") else sn }}{% endblock %}
+{%- block head -%}
+{% include "templates/includes/head.html" %}
+<style id="pcpb-css">{{ inline_css() | safe }}</style>
+<script>(function(){try{var t=localStorage.getItem('pc-theme');if(t)document.documentElement.setAttribute('data-pc-theme',t);var z=localStorage.getItem('pc-zoom');if(z)document.documentElement.style.fontSize=z+'%';}catch(e){}})();</script>
+{%- endblock -%}
+{% block navbar %}{% include "templates/includes/pcpb_header.html" %}{% endblock %}
+{% block footer %}{% include "templates/includes/pcpb_footer.html" %}{% endblock %}
+{%- block body_include %}{{ body_include or "" }}
+<script src="/assets/pcpb_website/js/pcpb.js?v={{ asset_version() }}"></script>
+{% endblock -%}

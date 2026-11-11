@@ -1,0 +1,29 @@
+{
+ "creation": "2026-11-11 10:00:00",
+ "docstatus": 0,
+ "doctype": "Web Template",
+ "fields": [
+  {
+   "fieldname": "html",
+   "fieldtype": "Text",
+   "label": "HTML",
+   "reqd": 0
+  },
+  {
+   "fieldname": "contained",
+   "fieldtype": "Check",
+   "label": "Keep inside the page width",
+   "reqd": 0,
+   "default": "1"
+  }
+ ],
+ "idx": 0,
+ "modified": "2026-11-11 12:00:00",
+ "modified_by": "Administrator",
+ "module": "PCPB Website",
+ "name": "PCPB Custom HTML",
+ "owner": "Administrator",
+ "standard": 1,
+ "template": "",
+ "type": "Section"
+}
